@@ -4,6 +4,8 @@ $\Omega$
 $\bracevert_{0}^{infty}$
 $\overset{above}{main}$
 $\sim$
+$\rightsquigarrow$
+$\longrightarrow$
 
 ### Chapter 2
 
