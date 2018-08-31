@@ -118,3 +118,9 @@ Similar definition applies to discrete r.v.
 
 D2.23 Marginal PMF of a joint discrete r.v. (X,Y) for X is defined as $f_X(x)=\mathbb{P}(X=x)=\sum_{y} \mathbb{P}(X=x,Y=y)=\sum_{y} f(x,y)$, marginal for Y is similar.  
 D2.25 Marginal PDF of a joint continuous r.v (X,Y) is similarly defined by integral  
+
+D2.29 Independent r.v. (X,Y), $\mathbb{P}(X,Y)=\mathbb{P}(X) \mathbb{P}(Y)$, $f_{X,Y}(x,y)=f_X(x)f_Y(y)$   
+T2.34 Independence check: Suppose that the range of X and Y is a (possibly infinite) rectangle. If f(x,y)=g(x)h(y) for some functions g and h, not necessarily PDF, then X and Y are indenpent.  
+
+D2.35 Conditional probability: Just remember $f_{X,Y}(x,y)=f_{X|Y}(x|y)f_Y(y)=f_{Y|X}(y|x)f_X(x)$ and $\mathbb{P}(X,Y)=\mathbb{P}(X) \mathbb{P}(Y|X) = \mathbb{P}(Y) \mathbb{P}(X|Y)$. The probablity of a given point for continuous is 0, how does the first one work?   
+
