@@ -1,11 +1,9 @@
-# statistical-learning
-Fundamentals of statistics and statistical learning notes and practice.
+# Statistics related books
+Don’t read too fast, avoid getting frustrated.
 
-# MIT 18.650. Statistics for Applications
-Assignments solutions for 18.650
 
-# All of Statistics
-Answers for book All of Statistics which is recommended by 18.650
+## All of Statistics
+Notes, code and problems of All of Statistics from [Larry Wasserman](http://www.stat.cmu.edu/~larry/)
 
-# Further reading
+## Further reading
 ...
