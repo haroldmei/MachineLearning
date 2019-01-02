@@ -1,5 +1,5 @@
 ### empirical cdf figures 
-x <- scan("~/=all_of_statistics/=hand.data/datasets/nerve.dat")
+x <- scan("../data/nerve.dat")
 n <- length(x)
 x <- sort(x)
 

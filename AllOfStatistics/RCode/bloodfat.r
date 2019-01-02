@@ -2,7 +2,7 @@
 postscript("bloodfat.ps",horizontal = FALSE, onefile = FALSE, paper ="special",
            width=6,height=6)
 par(mfrow=c(2,1))
-x <- scan("=hand.data/datasets/bloodfat.dat")
+x <- scan("../data/bloodfat.dat")
 x <- matrix(x,ncol=2,byrow=T)
 x <- x[,1]
 x1 <- x[1:51]
