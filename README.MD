@@ -8,4 +8,6 @@ Notes, code and problems of All of Statistics from [Larry Wasserman](http://www.
 Course project of Stanford CS229 Machine Learning. Can also be found:
 [report](http://cs229.stanford.edu/proj2018/report/184.pdf) 
 [poster](http://cs229.stanford.edu/proj2018/poster/184.pdf)
-...
+
+## CS221AI
+Course project of Stanford CS221 AI 
