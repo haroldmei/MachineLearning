@@ -23,9 +23,16 @@ Mean/Variance for important distributions
 ### Chapter 04 Inequalities  
 
 ### Chapter 05 Convergence of Random Variables  
+large sample theory, limit theory, asymptotic theory  
+law of large numbers, central limit theory  
+types of convergence(probability, distribution, quadratic mean(L2), L1, almost sure)  
+Slutzkey's theorem  
+Berry Esseen Inequality  
+Delta method  
+
+### Chapter 06 Models, Statistical Inference and Learning  
 
 
-### Chapter 06 
 ### Chapter 07 
 ### Chapter 08 
 
