@@ -433,6 +433,16 @@ def test_clt(m, n):
   plt.plot(x, f(x))
   plt.show()
 
+#############################################################
+import numpy as np
+from matplotlib import pyplot as plt
+
+# plot data with n bins;
+def plotData(s):
+  p, x = np.histogram(s, bins=100)
+  x = x[:-1] + (x[1] - x[0])/2
+  plt.plot(x, p)
+  plt.show()
 
 #############################################################
 # relations of convergence
