@@ -1,8 +1,8 @@
 
-### Reflex based models  
+### Part 1. Reflex based models  
 1. Machine Learning    
 
-### State based models: 
+### Part 2. State based models: 
 2. Search problems (Agent control everything)  
 3. Markov decision processes (Agent against nature)  
 4. Adversarial games (Agent against opponent, such as another agent)  
@@ -12,7 +12,7 @@
 * Robotics: motion planning  
 * Natural Language Processing: Machine Translation, Image Captioning  
 
-### Variables: 
+### Part 3. Variables: 
 5. Constraint Satisfaction Problems  
 6. Bayesian Networks  
 
@@ -21,5 +21,5 @@
 * Bayesian Networks: Tracking cars from sensors  
 * State based models vs Variable based models: the order in which things are done isn't important.  
 
-### Logic: 
+### Part 4. Logic: 
 7. Logic  
