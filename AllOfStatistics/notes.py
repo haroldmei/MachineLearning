@@ -459,3 +459,99 @@ def plotData(s):
 # Difference between weak/strong LLN
 # asymptotically uniformly integrable
 # 
+
+
+###########################################################
+import dbm
+
+db=dbm.open('cache', 'c')
+
+db['key1'] = b'value1'
+db['key2'] = b'value2'
+db['key3'] = b'value3'
+db['key4'] = b'value4'
+db['key5'] = b'value5'
+
+db[b'key2'] = 'New value2'
+db['key4'] = b'New value4'
+
+print(db.get('key6', b'New value6'))
+k = db.firstkey()
+while k != None:
+  print(k)
+  k = db.nextkey(k)
+
+db.close
+
+##############################################################
+import inspect
+def callsig(function):
+  """build a string with source code of the function call"""
+  desc = inspect.getfullargspec(function)
+  sign = ','.join(desc[0])
+  if desc[1]:
+    sign += ',*' + desc[1]
+  if desc[2]:
+    sign += ',**' + desc[2]
+  if sign and sign[0] == ',':
+    sign = sign[1:]
+  return sign
+
+def f(arg1, arg2 = None):
+  pass
+
+print(callsig(f))
+
+
+############################################################
+dict1 = {'key1':'val1','key2':'val2','key3':'val3'}
+dict2 = {'key4':'val4','key5':'val5','key6':'val6'}
+dict3 = dict1.update(dict2)
+print(dict1)
+print(dict2)
+print(dict3)
+
+############################################################
+# generate function at run time
+temp = """
+def get_%s(data):
+  print(data)
+  return data[%s]
+"""
+def foo(name, idx):
+  exec(temp % (name, idx), globals())
+
+foo('a', 4)
+
+#############################################################
+# map, zip, reversed, sorted
+wait_list = [1,2,3,4,5,6]
+exec_list = [6,5,4,3,2,1]
+#
+comb_list = list(zip(wait_list, exec_list))
+res = list(map(sorted, list(map(list, list(zip(*comb_list))))))
+print(res[0][-1], res[1][-1])
+#
+comb_list = reversed(list(zip(wait_list, exec_list)))
+res = list(map(sorted, list(map(list, list(zip(*comb_list))))))
+print(res[0][-1], res[1][-1])
+#
+comb_list = list(zip(wait_list, exec_list))
+res = list(map(max, list(zip(*comb_list))))
+print(res[0], res[1])
+
+##############################################################
+class Foo(object):
+  @classmethod
+  def class_foo(cls):
+    print("Class method for class %s" % cls)
+
+Foo.class_foo()
+
+# no decorator
+class Foo(object):
+  def class_foo(cls):
+    print("Class method for class %s" % cls)
+  class_foo = classmethod(class_foo)
+
+Foo.class_foo()
