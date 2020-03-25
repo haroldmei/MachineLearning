@@ -11,3 +11,20 @@ Course project of Stanford CS229 Machine Learning. Can also be found:
 
 ## CS221AI
 Course project of Stanford CS221 AI 
+
+
+## Papers
+### GAN
+Intriguing properties of neural networks, Szegedy et al.  
+Explaining and harnessing adversarial examples, Ian Goodfellow et el.
+Adversarial examples in the physical world, Alexay Kurakin, Ian Goodfellow, et el.
+SafetyNet: Detecting and Rejecting Adversarial Examples Robustly, Lu et el.
+Adversarial logit pairing, Kannan et el.
+
+
+### NLP
+
+### Statistics
+// Efficient Global Optimization of Expensive Black-Box Functions
+Snoek, Larochelle, Adams, 2012
+
