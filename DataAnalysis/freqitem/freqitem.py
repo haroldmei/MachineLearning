@@ -105,7 +105,7 @@ if __name__ == "__main__":
     two parameters, a support percentage, and a input spreadsheet
     """
     minFrac = 0.3
-    fname = 'machine_learning_challenge.xlsx'
+    fname = 'machine_learning_challenge.xls'
     if len(sys.argv) > 1:
         minFrac = float(sys.argv[1])
 
