@@ -2,14 +2,13 @@
 
 ### Ensemble: popular ways
 
-Bagging: Boostracp Aggregation  
+Bagging: Boostracp Aggregation - decrease the variance, at the cost of slightly increased bias.   
 * Naive Bagging  
-* Random Forest  
+* Random Forest - decorrelation: at each split consider only a fration of the total feature.   
 
-Boosting  
+Boosting, decrease the bias. Decision stumps  
 * Adaboost   
 * xgboost  
-
 
 ### More topics
 * Gaussian processes  
