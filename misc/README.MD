@@ -1,10 +1,11 @@
-## Pay by seconds for your GPU
+## Pay by seconds for your GPU 
 
-For people who are interested in those big modules(such as BERT, GPT, etc.), there is no better choices than utilising a cloud GPU from GCP or AWS for your research work. With just a couple of command lines, one can create a powerful Machine Learning computer to test one's idea out, without too much concern about the computation. However after numerous times making use of a cloud GPU, whether you are a student in a university or a recent AI graduate student, you often face bills from either Google or Amazon or Micrisoft for your unawareness of excessive use of the cloud resource.    
+(Advance cloud users)  
+For people who are interested in those big modules(such as BERT, GPT, etc.), there is no better choices than utilising a cloud GPU from GCP or AWS for your research work. With just a couple of command lines, one can create a powerful Machine Learning computer to test one's idea out, without too much concern about setting up the computation environment. Cloud computing isn't supposed to be more expensive than physical servers, and should be much easier to access. However after numerous times making use of cloud GPUs, whether you are a student in a university or a recent AI graduate student, you often find yourself facing large amount of bills from either Google or Amazon or Micrisoft for your unawareness of excessive use of the cloud resource.    
 
-I've been in such situations multiple times, and many times I have to pay with my own money, because I did use those resource with my own account(Thanks to my current employer I get to use the cloud resources with my employer's support). Yet I still am thinking of ways to minimize the the cose of my use of cloud resources.   
+I've been in such situations multiple times, and many times I have to pay with my own money, because I did use those resource with my own account. Thanks to my current employer I get to use the cloud resources with my employer's support; Yet I still find it useful to find out ways to minimize the the cost of my use of cloud resources.   
 
-cloudrun.sh is a handy tool that can help me use cloud resource effectively, especially when I am in need of several cutting edge GPUs to test my ideas.   
+cloudrun.sh is a handy tool that can help me use cloud resource effectively, especially when I am in need of several cutting edge GPUs to test my ideas. The idea is straightforward: Develop locally, and train on the cloud. The resource used include only a cloud VM with a GPU, and the cloud storage.  
 
 ### Model development cycle
 The steps for your model development (Ubuntu or Debian users only):     
@@ -26,3 +27,5 @@ The steps for your model development (Ubuntu or Debian users only):
       |- checkpoint
       |- main.py
 * Train your model with a cloud GPU with 'cloudrun.sh main.py'. Of course this time set your 'BATCHSIZE', 'EPOCHS' and your embedding size a much larger value. :thump :thump   
+
+
