@@ -83,8 +83,9 @@ echo !! Command: $COMMAND
 
 gcloud compute ssh --zone us-central1-a $VM_USER@$VM_INSTANCE -- $COMMAND
 
-gsutil -m rsync -r $GCSWORKSPACE .
+#don't do this
+# gsutil -m rsync -r $GCSWORKSPACE .
 
-# gcloud compute instances stop $VM_INSTANCE --zone us-central1-a
+gcloud compute instances stop $VM_INSTANCE --zone us-central1-a
 
 # gcloud compute instances delete $VM_INSTANCE --zone us-central1-a
