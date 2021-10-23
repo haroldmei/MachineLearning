@@ -19,13 +19,7 @@ The steps for your model development (Ubuntu or Debian users only):
    + $VM_USER: this is the home user of the abouve VM.
 * after all the above info are ready, put them in your linux .bashrc export section. (Windows users are similar)
 * save cloudrun.sh to your local bin folder(~/bin), and >source ~/.bashrc
-* Put all your model code, data and output model in the same folder, such as following. develop locally by using this folder structure. This means you will need to run 'python main.py' successfully   
-  |- VPP  
-      |- data  
-      |- model  
-      |- src  
-      |- checkpoint  
-      |- main.py  
+* Put all your model code, data and output model in the same folder. develop locally by using this folder structure. This means you will need to run 'python main.py' successfully   
 * Train your model with a cloud GPU with 'cloudrun.sh main.py'. Of course this time set your 'BATCHSIZE', 'EPOCHS' and your embedding size a much larger value. :thump :thump   
 
 
