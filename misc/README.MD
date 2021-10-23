@@ -2,6 +2,27 @@
 
 For people who are interested in those big modules(such as BERT, GPT, etc.), there is no better choices than utilising a cloud GPU from GCP or AWS for your research work. With just a couple of command lines, one can create a powerful Machine Learning computer to test one's idea out, without too much concern about the computation. However after numerous times making use of a cloud GPU, whether you are a student in a university or a recent AI graduate student, you often face bills from either Google or Amazon or Micrisoft for your unawareness of excessive use of the cloud resource.    
 
-I've been in such situations multiple times, and many times I have to pay with my own money, because I did use those resource with my own account(Thanks to my current employer I get to use the cloud resources with my employer's support). Yet I still am thinking of ways to minimize the the cose of my use of cloud resources. 
+I've been in such situations multiple times, and many times I have to pay with my own money, because I did use those resource with my own account(Thanks to my current employer I get to use the cloud resources with my employer's support). Yet I still am thinking of ways to minimize the the cose of my use of cloud resources.   
 
-cloudrun.sh is a handy tool that can help me use cloud resource effectively, especially when I am in need of several cutting edge GPUs to test my ideas.     
+cloudrun.sh is a handy tool that can help me use cloud resource effectively, especially when I am in need of several cutting edge GPUs to test my ideas.   
+
+### Model development cycle
+The steps for your model development (Ubuntu or Debian users only):     
+* A basic home PC with 8G RAM and a NVIDIA GTX GPU is enough to start with. After your model code passes your local PC, it's time to bring up a cloud GPU to run your code.  
+* Before bringing up the GPU VM with cloudrun.sh, some prerequisites are needed:
+ 1. you need a valid gcloud account, including a project id; and prepare these environment variables in system:   
+   * $GCP_ACCOUNT: the google cloud account, your email address
+   * $GCLOUD_PROJECT: the project id mentioned above; free tier or bill account
+   * $GCS_DIR: yes, a google storage directory; you need a gcs location to store your data and models
+   * $VM_INSTANCE: this is the virtual machine name you set, set it the first time and use it always
+   * $VM_USER: this is the home user of the abouve VM.
+ 2. after all the above info are ready, put them in your linux .bashrc export section. (Windows users are similar)
+ 3. save cloudrun.sh to your local bin folder(~/bin), and >source ~/.bashrc
+* Put all your model code, data and output model in the same folder, such as following. develop locally by using this folder structure. This means you will need to run 'python main.py' successfully   
+  |- VPP
+      |- data
+      |- model
+      |- src
+      |- checkpoint
+      |- main.py
+* Train your model with a cloud GPU with 'cloudrun.sh main.py'. Of course this time set your 'BATCHSIZE', 'EPOCHS' and your embedding size a much larger value. :thump :thump   
