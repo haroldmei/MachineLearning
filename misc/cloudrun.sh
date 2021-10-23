@@ -8,8 +8,8 @@ if [[ -z "${GCLOUD_PROJECT}" ]]; then
   exit 1
 fi
 
-if [[ -z "${GCS_BUCKET}" ]]; then
-  echo  "GCS_BUCKET undefined, add 'export GCS_BUCKET=bucket_url' in .bashrc and source it"
+if [[ -z "${GCS_DIR}" ]]; then
+  echo  "GCS_DIR undefined, add 'export GCS_DIR=bucket_url' in .bashrc and source it"
   exit 1
 fi
 
@@ -23,7 +23,21 @@ if [[ -z "${VM_USER}" ]]; then
   exit 1
 fi
 
+# A100: --machine-type a2-highgpu-1g
+# T4:   --machine-type n1-standard-4 --accelerator type=nvidia-tesla-t4,count=1 \
+# gcloud compute instances create $VM_INSTANCE \
+#     --network $GCP_NETWORK --subnet $GCP_SUBNET --no-address \
+#     --zone us-central1-a \
+#     --boot-disk-type pd-standard \
+#     --boot-disk-size 200GB \
+#     --metadata install-nvidia-driver=True,proxy-mode=project_editors,enable-oslogin=TRUE \
+#     --machine-type n1-standard-8 --accelerator type=nvidia-tesla-t4,count=1 \
+#     --image-family pytorch-latest-gpu-ubuntu-1804 \
+#     --image-project deeplearning-platform-release \
+#     --maintenance-policy TERMINATE --restart-on-failure \
+#     --preemptible
 
+# gcloud compute instances add-tags $VM_INSTANCE --tags=iap-enabled
 
 gcloud compute instances start $VM_INSTANCE --zone us-central1-a
 
@@ -35,10 +49,11 @@ do
 done
 
 WORKSPACE=$(echo $PWD | rev | cut -d'/' -f 1 | rev)
-GCSWORKSPACE=$GCS_BUCKET/$WORKSPACE
+GCSWORKSPACE=$GCS_DIR/$WORKSPACE
 
-#gcloud compute ssh --zone us-central1-a $VM_USER@$VM_INSTANCE --ssh-flag="-L 8080:localhost:8080"
-#gcloud compute ssh --zone us-central1-a $VM_USER@$VM_INSTANCE -- pip3 -r -s < requirements.txt
+
+# gcloud compute ssh --zone us-central1-a $VM_USER@$VM_INSTANCE --ssh-flag="-L 8080:localhost:8080"
+# gcloud compute ssh --zone us-central1-a $VM_USER@$VM_INSTANCE -- pip3 -r -s < requirements.txt
 
 # copy to gcs
 echo "sync $WORKSPACE to $GCSWORKSPACE"
@@ -56,13 +71,19 @@ else
 fi
 
 COMMAND="gcloud config set project $GCLOUD_PROJECT 
+    && mkdir $WORKSPACE \
+    && pip install transformers tensorboard \
     && gsutil -m rsync -r $GCSWORKSPACE $WORKSPACE \
     && cd $WORKSPACE \
     && python3 $1 \
     && gsutil -m rsync -r . $GCSWORKSPACE"
 
+echo !! Command: $COMMAND
+
 gcloud compute ssh --zone us-central1-a $VM_USER@$VM_INSTANCE -- $COMMAND
 
 gsutil -m rsync -r $GCSWORKSPACE .
 
-gcloud compute instances stop $VM_INSTANCE --zone us-central1-a
+# gcloud compute instances stop $VM_INSTANCE --zone us-central1-a
+
+# gcloud compute instances delete $VM_INSTANCE --zone us-central1-a
