@@ -11,21 +11,21 @@ cloudrun.sh is a handy tool that can help me use cloud resource effectively, esp
 The steps for your model development (Ubuntu or Debian users only):     
 * A basic home PC with 8G RAM and a NVIDIA GTX GPU is enough to start with. After your model code passes your local PC, it's time to bring up a cloud GPU to run your code.  
 * Before bringing up the GPU VM with cloudrun.sh, some prerequisites are needed:
- - you need a valid gcloud account, including a project id; and prepare these environment variables in system:   
+   + you need a valid gcloud account, including a project id; and prepare these environment variables in system:   
    + $GCP_ACCOUNT: the google cloud account, your email address
    + $GCLOUD_PROJECT: the project id mentioned above; free tier or bill account
    + $GCS_DIR: yes, a google storage directory; you need a gcs location to store your data and models
    + $VM_INSTANCE: this is the virtual machine name you set, set it the first time and use it always
    + $VM_USER: this is the home user of the abouve VM.
- - after all the above info are ready, put them in your linux .bashrc export section. (Windows users are similar)
- - save cloudrun.sh to your local bin folder(~/bin), and >source ~/.bashrc
+* after all the above info are ready, put them in your linux .bashrc export section. (Windows users are similar)
+* save cloudrun.sh to your local bin folder(~/bin), and >source ~/.bashrc
 * Put all your model code, data and output model in the same folder, such as following. develop locally by using this folder structure. This means you will need to run 'python main.py' successfully   
-  |- VPP
-      |- data
-      |- model
-      |- src
-      |- checkpoint
-      |- main.py
+  |- VPP  
+      |- data  
+      |- model  
+      |- src  
+      |- checkpoint  
+      |- main.py  
 * Train your model with a cloud GPU with 'cloudrun.sh main.py'. Of course this time set your 'BATCHSIZE', 'EPOCHS' and your embedding size a much larger value. :thump :thump   
 
 
