@@ -70,12 +70,13 @@ else
     gcloud compute ssh --zone us-central1-a $VM_USER@$VM_INSTANCE -- 'gcloud auth login' 
 fi
 
+# && pip3 install transformers tensorboard \
+
 COMMAND="gcloud config set project $GCLOUD_PROJECT 
-    && mkdir $WORKSPACE \
-    && pip install transformers tensorboard \
+    && mkdir -p $WORKSPACE \
     && gsutil -m rsync -r $GCSWORKSPACE $WORKSPACE \
     && cd $WORKSPACE \
-    && python3 $1 \
+    && /opt/conda/bin/python3 $1 \
     && gsutil -m rsync -r . $GCSWORKSPACE"
 
 echo !! Command: $COMMAND
