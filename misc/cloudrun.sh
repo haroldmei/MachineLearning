@@ -31,7 +31,7 @@ fi
 #     --boot-disk-type pd-standard \
 #     --boot-disk-size 200GB \
 #     --metadata install-nvidia-driver=True,proxy-mode=project_editors,enable-oslogin=TRUE \
-#     --machine-type n1-standard-8 --accelerator type=nvidia-tesla-t4,count=1 \
+#     --machine-type a2-highgpu-1g \
 #     --image-family pytorch-latest-gpu-ubuntu-1804 \
 #     --image-project deeplearning-platform-release \
 #     --maintenance-policy TERMINATE --restart-on-failure \
@@ -66,8 +66,8 @@ ACTIVE_ACCOUNT=$(gcloud compute ssh --zone us-central1-a $VM_USER@$VM_INSTANCE -
 if echo $ACTIVE_ACCOUNT | grep $GCP_ACCOUNT; then
     echo "auth skipped"
 else
-    echo "auth needed"
-    gcloud compute ssh --zone us-central1-a $VM_USER@$VM_INSTANCE -- 'gcloud auth login' 
+    echo "auth needed, install packages as well"
+    gcloud compute ssh --zone us-central1-a $VM_USER@$VM_INSTANCE -- 'gcloud auth login && /opt/conda/bin/pip3 install -r requirements.txt' 
 fi
 
 # && pip3 install transformers tensorboard \
