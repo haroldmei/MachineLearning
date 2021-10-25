@@ -67,7 +67,7 @@ if echo $ACTIVE_ACCOUNT | grep $GCP_ACCOUNT; then
     echo "auth skipped"
 else
     echo "auth needed, install packages as well"
-    gcloud compute ssh --zone us-central1-a $VM_USER@$VM_INSTANCE -- 'gcloud auth login && /opt/conda/bin/pip3 install -r requirements.txt' 
+    gcloud compute ssh --zone us-central1-a $VM_USER@$VM_INSTANCE -- 'gcloud auth login' 
 fi
 
 # && pip3 install transformers tensorboard \
@@ -76,6 +76,7 @@ COMMAND="gcloud config set project $GCLOUD_PROJECT
     && mkdir -p $WORKSPACE \
     && gsutil -m rsync -r $GCSWORKSPACE $WORKSPACE \
     && cd $WORKSPACE \
+    && /opt/conda/bin/pip3 install -r requirements.txt \
     && /opt/conda/bin/python3 $1 \
     && gsutil -m rsync -r . $GCSWORKSPACE"
 
@@ -83,7 +84,6 @@ echo !! Command: $COMMAND
 
 gcloud compute ssh --zone us-central1-a $VM_USER@$VM_INSTANCE -- $COMMAND
 
-#don't do this
 # gsutil -m rsync -r $GCSWORKSPACE .
 
 gcloud compute instances stop $VM_INSTANCE --zone us-central1-a
