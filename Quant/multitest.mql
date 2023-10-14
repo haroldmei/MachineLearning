@@ -1,0 +1,208 @@
+// url: https://www.mql5.com/en/forum/301591/page2
+
+
+#include <StdLibErr.mqh>
+
+//INPUTS
+input string   TradeSymbols         = "AUDCAD|AUDJPY|AUDNZD|AUDUSD|EURUSD";   //Symbol(s) or ALL or CURRENT
+input int      BBandsPeriods        = 20;       //Bollinger Bands Periods
+input double   BBandsDeviations     = 1.0;      //Bollinger Bands Deviations
+
+//GENERAL GLOBALS
+string   AllSymbolsString           = "AUDCAD|AUDJPY|AUDNZD|AUDUSD|CADJPY|EURAUD|EURCAD|EURGBP|EURJPY|EURNZD|EURUSD|GBPAUD|GBPCAD|GBPJPY|GBPNZD|GBPUSD|NZDCAD|NZDJPY|NZDUSD|USDCAD|USDCHF|USDJPY";
+int      NumberOfTradeableSymbols;
+string   SymbolArray[];
+int      TicksReceivedCount         = 0;
+
+//INDICATOR HANDLES
+int handle_BollingerBands[];
+//Place additional indicator handles here as required
+//OPEN TRADE ARRAYS
+ulong    OpenTradeOrderTicket[];    //To store 'order' ticket for trades
+//Place additional trade arrays here as required to assist with open trade management
+
+   if(TradeSymbols == "CURRENT")  //Override TradeSymbols input variable and use the current chart symbol only
+     {
+      NumberOfTradeableSymbols = 1;
+
+      ArrayResize(SymbolArray, 1);
+      SymbolArray[0] = Symbol();
+      Print("EA will process ", SymbolArray[0], " only");
+     }
+   else
+     {
+      string TradeSymbolsToUse = "";
+
+      if(TradeSymbols == "ALL")
+         TradeSymbolsToUse = AllSymbolsString;
+      else
+         TradeSymbolsToUse = TradeSymbols;
+
+      //CONVERT TradeSymbolsToUse TO THE STRING ARRAY SymbolArray
+      NumberOfTradeableSymbols = StringSplit(TradeSymbolsToUse, '|', SymbolArray);
+
+      Print("EA will process: ", TradeSymbolsToUse);
+     }
+
+
+//RESIZE INDICATOR HANDLE ARRAYS
+   ResizeIndicatorHandleArrays();
+
+   Print("All arrays sized to accomodate ", NumberOfTradeableSymbols, " symbols");
+
+
+//INSTANTIATE INDICATOR HANDLES
+   if(!SetUpIndicatorHandles())
+      return(INIT_FAILED);
+//---
+   return(INIT_SUCCEEDED);
+  }
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+  {
+//---
+//Pannola.Destroy(reason);
+  }
+//+------------------------------------------------------------------+
+//| Expert tick function                                             |
+//+------------------------------------------------------------------+
+void OnTick()
+  {
+   TicksReceivedCount++;
+  }
+
+
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+void ResizeIndicatorHandleArrays()
+  {
+//Indicator Handles
+   ArrayResize(handle_BollingerBands, NumberOfTradeableSymbols);
+//Add other indicators here as required by your EA
+  }
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+
+//SET UP REQUIRED INDICATOR HANDLES (arrays because of multi-symbol capability in EA)
+bool SetUpIndicatorHandles()
+  {
+//Bollinger Bands
+   for(int SymbolLoop=0; SymbolLoop < NumberOfTradeableSymbols; SymbolLoop++)
+     {
+      //Reset any previous error codes so that only gets set if problem setting up indicator handle
+      ResetLastError();
+
+      handle_BollingerBands[SymbolLoop] = iBands(SymbolArray[SymbolLoop], Period(), BBandsPeriods, 0, BBandsDeviations, PRICE_CLOSE);
+
+      if(handle_BollingerBands[SymbolLoop] == INVALID_HANDLE)
+        {
+         string outputMessage = "";
+
+         if(GetLastError() == 4302)
+            outputMessage = "Symbol needs to be added to the MarketWatch";
+         else
+            StringConcatenate(outputMessage, "(error code ", GetLastError(), ")");
+
+         MessageBox("Failed to create handle of the iBands indicator for " + SymbolArray[SymbolLoop] + "/" + EnumToString(Period()) + "\n\r\n\r" +
+                    outputMessage +
+                    "\n\r\n\rEA will now terminate.");
+
+         //Don't proceed
+         return false;
+        }
+
+      Print("Handle for iBands / ", SymbolArray[SymbolLoop], " / ", EnumToString(Period()), " successfully created");
+     }
+
+//All completed without errors so return true
+   return true;
+  }
+
+
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+bool tlamCopyBuffer(int ind_handle,            // handle of the indicator
+                    int buffer_num,            // for indicators with multiple buffers
+                    double &localArray[],      // local array
+                    int numBarsRequired,       // number of values to copy
+                    string symbolDescription,
+                    string indDesc)
+  {
+
+   int availableBars;
+   bool success = false;
+   int failureCount = 0;
+
+//Sometimes a delay in prices coming through can cause failure, so allow 3 attempts
+   while(!success)
+     {
+      availableBars = BarsCalculated(ind_handle);
+
+      if(availableBars < numBarsRequired)
+        {
+         failureCount++;
+
+         if(failureCount >= 3)
+           {
+            Print("Failed to calculate sufficient bars in tlamCopyBuffer() after ", failureCount, " attempts (", symbolDescription, "/", indDesc, " - Required=", numBarsRequired, " Available=", availableBars, ")");
+            return(false);
+           }
+
+         Print("Attempt ", failureCount, ": Insufficient bars calculated for ", symbolDescription, "/", indDesc, "(Required=", numBarsRequired, " Available=", availableBars, ")");
+
+         //Sleep for 0.1s to allow time for price data to become usable
+         Sleep(100);
+        }
+      else
+        {
+         success = true;
+
+         if(failureCount > 0) //only write success message if previous failures registered
+            Print("Succeeded on attempt ", failureCount+1);
+        }
+     }
+
+   ResetLastError();
+
+   int numAvailableBars = CopyBuffer(ind_handle, buffer_num, 0, numBarsRequired, localArray);
+
+   if(numAvailableBars != numBarsRequired)
+     {
+      Print("Failed to copy data from indicator with error code ", GetLastError(), ". Bars required = ", numBarsRequired, " but bars copied = ", numAvailableBars);
+      return(false);
+     }
+
+//Ensure that elements indexed like in a timeseries (with index 0 being the current, 1 being one bar back in time etc.)
+   ArraySetAsSeries(localArray, true);
+
+   return(true);
+  }
+
+
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+void OutputStatusToChart(string additionalMetrics)
+  {
+//GET GMT OFFSET OF MT5 SERVER
+   double offsetInHours = (TimeCurrent() - TimeGMT()) / 3600.0;
+
+//SYMBOLS BEING TRADED
+   string symbolsText = "SYMBOLS BEING TRADED: ";
+   for(int SymbolLoop=0; SymbolLoop < NumberOfTradeableSymbols; SymbolLoop++)
+      StringConcatenate(symbolsText, symbolsText, " ", SymbolArray[SymbolLoop]);
+
+   Comment("\n\rMT5 SERVER TIME: ", TimeCurrent(), " (OPERATING AT UTC/GMT", StringFormat("%+.1f", offsetInHours), ")\n\r\n\r",
+           Symbol(), " TICKS RECEIVED: ", TicksReceivedCount, "\n\r\n\r",
+           symbolsText,
+           "\n\r\n\r", additionalMetrics);
+  }
+//+------------------------------------------------------------------+
