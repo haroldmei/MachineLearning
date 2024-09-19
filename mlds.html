@@ -1,0 +1,2918 @@
+<!DOCTYPE html><html><head>
+      <title>mlds</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\harol\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.13\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      <script type="text/javascript" src="file:///c:\Users\harol\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.13\crossnote\dependencies\mermaid\mermaid.min.js" charset="UTF-8"></script>
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="ads-click-prediction">Ads Click Prediction </h1>
+<h3 id="1-problem-formulation">1. Problem Formulation </h3>
+<ul>
+<li>
+<p>Clarifying questions</p>
+<ul>
+<li>What is the primary business objective of the click prediction system?</li>
+<li>What types of ads are we predicting clicks for (e.g., display ads, video ads, sponsored content)?</li>
+<li>Are there specific user segments or contexts we should consider (e.g., user demographics, browsing history)?</li>
+<li>How will we define and measure the success of click predictions (e.g., click-through rate, conversion rate)?</li>
+<li>Do we have negative feedback features (such as hide ad, block, etc)?</li>
+<li>Do we have fatigue period (where ad is no longer shown to the users where there is no interest, for X days)?</li>
+<li>What type of user-ad interaction data do we have access to can we use it for training our models?</li>
+<li>Do we need continual training?</li>
+<li>How do we collect negative samples? (not clicked, negative feedback).</li>
+</ul>
+</li>
+<li>
+<p>Use case(s) and business goal</p>
+<ul>
+<li>use case: predict which ads a user is likely to click on when presented with multiple ad options.</li>
+<li>business objective: maximize ad revenue by delivering more relevant ads to users, improving click-through rates, and maximizing the value of ad inventory.</li>
+</ul>
+</li>
+<li>
+<p>Requirements;</p>
+<ul>
+<li>Real-time prediction capabilities to serve ads dynamically.</li>
+<li>Scalability to handle a large number of ad impressions.</li>
+<li>Integration with ad serving platforms and data sources.</li>
+<li>Continuous model training and updating.</li>
+</ul>
+</li>
+<li>
+<p>Constraints:</p>
+<ul>
+<li>Privacy and compliance with data protection regulations.</li>
+<li>Latency requirements for real-time ad serving.</li>
+<li>Limited user attention, as users may quickly decide whether to click on an ad.</li>
+</ul>
+</li>
+<li>
+<p>Data: Sources and Availability:</p>
+<ul>
+<li>Data sources include user interaction logs, ad content data, user profiles, and contextual information.</li>
+<li>Historical click and impression data for model training and evaluation.</li>
+<li>Availability of labeled data for supervised learning.</li>
+</ul>
+</li>
+<li>
+<p>Assumptions:</p>
+<ul>
+<li>Users' click behavior is influenced by factors that can be learned from historical data.</li>
+<li>Ad content and relevance play a significant role in click predictions.</li>
+<li>The click behavior can be modeled as a classification problem.</li>
+</ul>
+</li>
+<li>
+<p>ML Formulation:</p>
+<ul>
+<li>Ad click prediction is a ranking problem</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-metrics">2. Metrics </h3>
+<ul>
+<li>Offline metrics
+<ul>
+<li>CE</li>
+<li>NCE (normalized over baseline)</li>
+</ul>
+</li>
+<li>Online metrics
+<ul>
+<li>CTR (#clicks/#impressions)</li>
+<li>Conversion rate (#conversion/#impression)</li>
+<li>Revenue lift (increase in revenue over time)</li>
+<li>Hide rate (#hidden ads/#impression)</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-architectural-components">3. Architectural Components </h3>
+<ul>
+<li>High level architecture</li>
+<li>We can use point-wise learning to rank (LTR)
+<ul>
+<li>The a binary classification task, where the goal is to predict whether a user will click (1) or not click (0) on a given ad impression -&gt; given a pair of &lt;user, ad&gt; as input -&gt; click or no click</li>
+<li>Features can include user demographics, ad characteristics, context (e.g., device, location), and historical behavior.</li>
+<li>Machine learning models, such as logistic regression, decision trees, gradient boosting, or deep neural networks, can be used for prediction.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-data-collection-and-preparation">4. Data Collection and Preparation </h3>
+<ul>
+<li>Data Sources
+<ul>
+<li>Users,</li>
+<li>Ads,</li>
+<li>User-ad interaction</li>
+</ul>
+</li>
+<li>ML Data types</li>
+<li>Labelling</li>
+</ul>
+<h3 id="5-feature-engineering">5. Feature Engineering </h3>
+<ul>
+<li>Feature selection
+<ul>
+<li>Ads:
+<ul>
+<li>IDs</li>
+<li>categories</li>
+<li>Image/videos</li>
+<li>No of impressions / clicks (ad, adv, campaign)</li>
+</ul>
+</li>
+<li>User:
+<ul>
+<li>ID, username</li>
+<li>Demographics (Age, gender, location)</li>
+<li>Context (device, time of day, etc)</li>
+<li>Interaction history (e.g. user ad click rate, total clicks, etc)</li>
+</ul>
+</li>
+<li>User-Ad interaction:
+<ul>
+<li>IDs(user, Ad), interaction type, time, location, dwell time</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Feature representation / preparation
+<ul>
+<li>sparse features
+<ul>
+<li>IDs: embedding layer (each ID type its own embedding layer)</li>
+</ul>
+</li>
+<li>Dense features:
+<ul>
+<li>Engagement feats: No of clicks, impressions, etc</li>
+<li>use directly</li>
+</ul>
+</li>
+<li>Image / Video:
+<ul>
+<li>preprocess</li>
+<li>use e.g. SimCLR to convert -&gt; feature vector</li>
+</ul>
+</li>
+<li>Category: Textual data
+<ul>
+<li>normalization, tokenization, encoding</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-model-development-and-offline-evaluation">6. Model Development and Offline Evaluation </h3>
+<ul>
+<li>
+<p>Model selection</p>
+<ul>
+<li>LR</li>
+<li>Feature crossing + LR
+<ul>
+<li>feature crossing: combine 2/more features into new feats (e.g. sum, product)
+<ul>
+<li>pros: capture nonlin interactions b/w feats</li>
+<li>cons: manual process, and domain knowledge needed</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>GBDT
+<ul>
+<li>pros: interpretable</li>
+<li>cons: inefficient for continual training, can't train embedding layers</li>
+</ul>
+</li>
+<li>GBDT + LR
+<ul>
+<li>GBDT for feature selection and/or extraction, LR for classific</li>
+</ul>
+</li>
+<li>NN
+<ul>
+<li>Two options: single network, two tower network (user tower, ad tower)</li>
+<li>Cons for ads prediction:
+<ul>
+<li>sparsity of features, huge number of them</li>
+<li>hard to capture pairwise interactions (large no of them)</li>
+</ul>
+</li>
+<li>Not a good choice here.</li>
+</ul>
+</li>
+<li>Deep and cross network (DCN)
+<ul>
+<li>finds feature interactions automatically</li>
+<li>two parallel networks: deep network (learns complex features) and cross network (learns interactions)</li>
+<li>two types: stacked, and parallel</li>
+</ul>
+</li>
+<li>Factorization Machine
+<ul>
+<li>embedding based model, improves LR by automatically learning feature interactions (by learning embeddings for features)</li>
+<li>w0  + \sum (w_i.x_i) + \sum\sum &lt;v_i, v_j&gt; x_i.x_j</li>
+<li>cons: can't learn higher order interactions from features unlike NN</li>
+</ul>
+</li>
+<li>Deep factorization machine (DFM)
+<ul>
+<li>combines a NN (for complex features) and a FM (for pairwise interactions)</li>
+</ul>
+</li>
+<li>start with LR to form a baseline, then experiment with DCN &amp; DeepFM</li>
+</ul>
+</li>
+<li>
+<p>Model Training</p>
+<ul>
+<li>Loss function:
+<ul>
+<li>binary classification: CE</li>
+<li>Dataset
+<ul>
+<li>labels: positive: user clicks the ad &lt; t seconds after ad is shown, negative: no click within t secs</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Model eval and HP tuning</li>
+<li>Iterations</li>
+</ul>
+</li>
+</ul>
+<h3 id="7-prediction-service">7. Prediction Service </h3>
+<ul>
+<li>Data Prep pipeline
+<ul>
+<li>static features (e.g. ad img, category) -&gt; batch feature compute (daily, weekly) -&gt; feature store</li>
+<li>dynamic features: # of ad impressions, clicks.</li>
+</ul>
+</li>
+<li>Prediction pipeline
+<ul>
+<li>two stage (funnel) architecture
+<ul>
+<li>candidate generation
+<ul>
+<li>use ad targeting criteria by advertiser (age, gender, location, etc)</li>
+</ul>
+</li>
+<li>ranking
+<ul>
+<li>features -&gt; model -&gt; click prob. -&gt; sort</li>
+<li>re-ranking: business logic (e.g. diversity)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Continual learning pipeline
+<ul>
+<li>fine tune on new data, eval, and deploy if improves metrics</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-online-testing-and-deployment">8. Online Testing and Deployment </h3>
+<ul>
+<li>A/B Test</li>
+<li>Deployment and release</li>
+</ul>
+<h3 id="9-scaling-monitoring-and-updates">9. Scaling, Monitoring, and Updates </h3>
+<ul>
+<li>Scaling (SW and ML systems)</li>
+<li>Monitoring</li>
+<li>Updates</li>
+</ul>
+<h3 id="10-other-topics">10. Other topics </h3>
+<ul>
+<li>calibration:
+<ul>
+<li>fine-tuning predicted probabilities to align them with actual click probabilities</li>
+</ul>
+</li>
+<li>data leakage:
+<ul>
+<li>info from the test or eval dataset influences the training process</li>
+<li>target leakage, data contamination (from test to train set)</li>
+</ul>
+</li>
+<li>catastrophic forgetting
+<ul>
+<li>model trained on new data loses its ability to perform well on previously learned tasks</li>
+</ul>
+</li>
+</ul>
+<h1 id="design-an-event-recommendation-system">Design an event recommendation system </h1>
+<h2 id="1-problem-formulation-1">1. Problem Formulation </h2>
+<ul>
+<li>
+<p>Clarifying questions</p>
+<ul>
+<li>Use case?
+<ul>
+<li>event recommendation system similar to eventbrite's.</li>
+</ul>
+</li>
+<li>What is the main Business objective?
+<ul>
+<li>Increase ticket sales</li>
+</ul>
+</li>
+<li>Does it need to be personalized for the user? Personalized for the user</li>
+<li>User locations? Worldwide (multiple languages)</li>
+<li>User’s age group:</li>
+<li>How many users? 100 million DAU</li>
+<li>How many events? 1M events / month</li>
+<li>Latency requirements  - 200msec?</li>
+<li>Data access
+<ul>
+<li>Do we log and have access to any data? Can we build a dataset using user interactions ?</li>
+<li>Do we have textual description of items?</li>
+<li>Can we use location data (e.g. 3rd party API)? (events are location based)</li>
+</ul>
+</li>
+<li>Can users become friends on the platform? Do we wanna use friendships?</li>
+<li>Can users invite friends?</li>
+<li>Can users RSVP or just register?</li>
+<li>Free or Paid? Both</li>
+</ul>
+</li>
+<li>
+<p>ML formulation</p>
+<ul>
+<li>ML Objective: Recommend most relevant (define) events to the users to maximize the number of registered events</li>
+<li>ML category: Recommendation system (ranking approach)
+<ul>
+<li>rule based system</li>
+<li>embedding based (CF and content based)</li>
+<li>Ranking problem (LTR)
+<ul>
+<li>pointwise, pairwise, listwise</li>
+</ul>
+</li>
+<li>we choose pointwise LTR ranking formulation</li>
+</ul>
+</li>
+<li>I/O: In: user_id, Out: ranked list of events + relevance score
+<ul>
+<li>Pointwise LTR classifier I/O: I: &lt;user_id, event_id&gt;, O: P(event register) (Binary classification)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-metrics-offline-and-online">2. Metrics (Offline and Online) </h2>
+<ul>
+<li>
+<p>Offline:</p>
+<ul>
+<li>precision @k, recall @ k (not consider ranking quality)</li>
+<li>MRR, mAP, nDCG (good, focus on first element, binary relevance, non-binary relevance) -&gt; here event register binary relevance so use mAP</li>
+</ul>
+</li>
+<li>
+<p>Online:</p>
+<ul>
+<li>CTR, conversion rate, bookmark/like rate, revenue lift</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-architectural-components-mvp-logic">3. Architectural Components (MVP Logic) </h2>
+<ul>
+<li>We two stage (funnel) architecture for
+<ul>
+<li>candidate generation
+<ul>
+<li>rule based event filtering (e.g. location, etc)</li>
+</ul>
+</li>
+<li>ranking formulation (pointwise LTR) binary classifier</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-data-preparation">4. Data preparation </h2>
+<ul>
+<li>
+<p>Data Sources:</p>
+<ol>
+<li>Users (user profile, historical interactions)</li>
+<li>Events</li>
+<li>User friendships</li>
+<li>User-event interactions</li>
+<li>Context</li>
+</ol>
+</li>
+<li>
+<p>Labeling:</p>
+</li>
+</ul>
+<h2 id="5-feature-engineering-1">5. Feature engineering </h2>
+<ul>
+<li>
+<p>Note: Event based recommendation is more challenging than movie/video:</p>
+<ul>
+<li>events are short lived -&gt; not many historical interactions -&gt; cold start (constant new item problem)</li>
+<li>So we put more effort on feature engineering (many meaningful features)</li>
+</ul>
+</li>
+<li>
+<p>Features:</p>
+<ul>
+<li>
+<p>User features</p>
+<ul>
+<li>age (one hot), gender (bucketize), event history</li>
+</ul>
+</li>
+<li>
+<p>Event features</p>
+<ul>
+<li>price, No of registered,</li>
+<li>time (event time, length, remained time)</li>
+<li>location  (city, country, accessibility)</li>
+<li>description</li>
+<li>host (&amp; popularity)</li>
+</ul>
+</li>
+<li>
+<p>User Event features</p>
+<ul>
+<li>event price similarity</li>
+<li>event description similarity</li>
+<li>no. registered similarity</li>
+<li>same city, state, country</li>
+<li>distance</li>
+<li>time similarity (event length, day, time of day)</li>
+</ul>
+</li>
+<li>
+<p>Social features</p>
+<ul>
+<li>No./ ratio of friends going</li>
+<li>invited by friends (No)</li>
+<li>hosted by friend (similarity)</li>
+</ul>
+</li>
+<li>
+<p>context</p>
+<ul>
+<li>location, time</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Feature preprocessing</p>
+<ul>
+<li>one hot (gender)</li>
+<li>bucketize + one hot (age, distance, time)</li>
+</ul>
+</li>
+<li>
+<p>feature processing</p>
+<ul>
+<li>Batch (for static) vs Online (streaming, for dynamic) processing</li>
+<li>efficient feature computation (e.g. for location, distance)</li>
+<li>improve: embedding learning - for users and events</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-model-development-and-offline-evaluation-1">6. Model Development and Offline Evaluation </h2>
+<ul>
+<li>Model selection
+<ul>
+<li>Binary classification problem:
+<ul>
+<li>LR (nonlinear interactions)</li>
+<li>GBDT (good for structured, not for continual learning)</li>
+<li>NN (continual learning, expressive, nonlinear rels)</li>
+</ul>
+</li>
+<li>we can start with GBDT as a baseline and experiment improvements by NN (both good options)</li>
+</ul>
+</li>
+<li>Dataset
+<ul>
+<li>for each user and event pair, compute features, and label 1 if registered, 0 if not</li>
+<li>class imbalance
+<ul>
+<li>resampling</li>
+<li>use focal loss or class-balanced loss</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="7-prediction-service-1">7. Prediction Service </h2>
+<ul>
+<li>Candidate generation
+<ul>
+<li>event filtering (millions to hundreds)
+<ul>
+<li>rule based (given a user, e.g. location, type, etc filters)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Ranking
+<ul>
+<li>compute scores for &lt;usr, event&gt; pairs, and sort</li>
+</ul>
+</li>
+</ul>
+<h2 id="8-online-testing-and-deployment-1">8. Online Testing and Deployment </h2>
+<p>Standard approaches as before.</p>
+<h2 id="9-scaling">9. Scaling </h2>
+<h1 id="design-a-game-recommendation-engine">Design a game recommendation engine </h1>
+<h2 id="1-problem-formulation-2">1. Problem Formulation </h2>
+<p>User-game interaction</p>
+<p>Some existing data examples:</p>
+<ul>
+<li>
+<p>Games data</p>
+<ul>
+<li>app_id,<br>
+title,<br>
+date_release,<br>
+win,<br>
+mac,<br>
+linux,<br>
+rating,<br>
+positive_ratio,<br>
+user_reviews,<br>
+price_final,<br>
+price_original,<br>
+discount,<br>
+steam_deck,</li>
+</ul>
+</li>
+<li>
+<p>User historic data</p>
+<ul>
+<li>user_id,<br>
+products,<br>
+reviews,</li>
+</ul>
+</li>
+<li>
+<p>Recommendations data</p>
+<ul>
+<li>app_id,<br>
+helpful,<br>
+funny,<br>
+date,<br>
+is_recommended,<br>
+hours,<br>
+user_id,<br>
+review_id,</li>
+</ul>
+</li>
+<li>
+<p>Reviews</p>
+</li>
+<li>
+<p>Example Open Source Data: <a href="https://www.kaggle.com/datasets/trolukovich/steam-games-complete-dataset">Steam games complete dataset</a> (<a href="https://github.com/AudreyGermain/Game-Recommendation-System">CF and content based github</a>)</p>
+<ul>
+<li>Game fatures include:<br>
+Url,<br>
+types<br>
+name,<br>
+desc_snippet,<br>
+recent_reviews,<br>
+all_reviews,<br>
+release_date,<br>
+developer,<br>
+publisher,<br>
+popular_tag,</li>
+</ul>
+</li>
+</ul>
+<h3 id="clarifying-questions">Clarifying questions </h3>
+<ul>
+<li>Use case? Homepage?
+<ul>
+<li>Does user sends a text query as well?</li>
+</ul>
+</li>
+<li>Business objective?
+<ul>
+<li>Increase user engagement (play, like, click, share), purchase?, create a better ultimate gaming experience</li>
+</ul>
+</li>
+<li>Similar to previously played, or personalized for the user? Personalized for the user</li>
+<li>User locations? Worldwide (multiple languages)</li>
+<li>User’s age group:</li>
+<li>Do users have any favorite lists, play later, etc?</li>
+<li>How many games? 100 million</li>
+<li>How many users? 100 million DAU</li>
+<li>Latency requirements  - 200msec?</li>
+<li>Data access
+<ul>
+<li>Do we log and have access to any data? Can we build a dataset using user interactions ?</li>
+<li>Do we have textual description of items?</li>
+</ul>
+</li>
+<li>can users become friends on the platform and do we wanna take that into account?</li>
+<li>Free or Paid?</li>
+</ul>
+<h3 id="ml-objective">ML objective </h3>
+<ul>
+<li>Recommend most engaging (define) games
+<ul>
+<li>Max. No. of clicks (clickbait)</li>
+<li>Max. No. completed games/sessions/levels (bias to shorter)</li>
+<li>Max. total hours played ()</li>
+<li>Max. No. of relevant items (proxy by user implicit/explicit reactions) -&gt; more control over signals, not the above shortcomings</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Define relevance: e.g. like is relevant, or playing half of it is, …</li>
+<li>ML Objective: build dataset and model to predict the relevance score b/w user and a game</li>
+<li>I/O: I: user_id, O: ranked list of games + relevance score</li>
+<li>ML category: Recommendation System</li>
+</ul>
+<h2 id="2-metrics-offline-and-online-1">2. Metrics (Offline and Online) </h2>
+<ul>
+<li>Offline:
+<ul>
+<li>precision @k, mAP, and diversity</li>
+</ul>
+</li>
+<li>Online:
+<ul>
+<li>CTR, # of completed, # of purchased, total play time, total purchase, user feedback</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-architectural-components-mvp-logic-1">3. Architectural Components (MVP Logic) </h2>
+<p>The main approaches used for personalized recommendation systems:</p>
+<ul>
+<li>Content-based filtering: suggest items similar to those user found relevant (e.g. liked)
+<ul>
+<li>No need for interaction data, recommends new items to users (no item cold start)</li>
+<li>Capture unique interests of users</li>
+<li>New user cold start</li>
+<li>Needs domain knowledge</li>
+</ul>
+</li>
+<li>CF: Using user-user (user based CF) or item-item similarities (item based CF)
+<ul>
+<li>Pros
+<ul>
+<li>No domain knowledge</li>
+<li>Capture new areas of interest</li>
+<li>Faster than content (no content info needed)</li>
+</ul>
+</li>
+<li>Cons:
+<ul>
+<li>Cold start problem (both user and item)</li>
+<li>No niche interest</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Hybrid
+<ul>
+<li>Parallel hybrid: combine(CF results, content based)</li>
+<li>Sequential: [CF based] -&gt; Content based</li>
+</ul>
+</li>
+</ul>
+<p>What do we choose?<br>
+We choose a sequential hybrid model (standard e.g. for video recommendation)</p>
+<p>We follow  the three stage recommender system (funnel architecture) in order to meet latency requirements and eb able to scale the system to billions of items.</p>
+<div class="mermaid">   Candidate generation --&gt; Ranking --&gt; Re-ranking
+</div><p>In the first stage, we use a light model to retrive thousands of items from millions<br>
+In the second (ranking) stage, we focus on high precision using a powerful model. This will not impact serving speed much because it's only run on smaller subset of items.</p>
+<p>Candidate generation in practice comes from aggregation of different candidate generation models. Here we can assume three candidate generation modules:</p>
+<ol>
+<li>Candidate generation 1 (Relevance based)</li>
+<li>Candidate generation 2 (Popularity)</li>
+<li>Candidate generation 3 (Trending)</li>
+</ol>
+<p>where we use CF for candidate generation 1</p>
+<p>We use content based modeling for ranking.</p>
+<h2 id="4-data-preparation-1">4. Data preparation </h2>
+<p>Data Sources:</p>
+<ol>
+<li>
+<p>Users (user profile, historical interactions):</p>
+<ul>
+<li>User profile
+<ul>
+<li>User_id, username, age, gender, location (city, country), lang, timezone</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Games (structures, metadata, game content - what is it?)</p>
+<ul>
+<li>Game_id, title, date, rating, expected_length?,  #reviews, language, tags, description, price, developer, publisher, level, #levels</li>
+</ul>
+</li>
+<li>
+<p>User-Game interactions:<br>
+Historical interactions: Play, purchase, like, and search history, etc</p>
+<ul>
+<li>User_id, game_id, timestamp, interaction_type(purchase, play, like, impression, search), interaction_val, location</li>
+</ul>
+</li>
+<li>
+<p>Context: time of the day, day of the week, device, OS</p>
+</li>
+</ol>
+<p>Type</p>
+<ul>
+<li>Removing duplicates</li>
+<li>filling missing values</li>
+<li>normalizing data.</li>
+</ul>
+<h3 id="labeling">Labeling: </h3>
+<p>For features in the form of &lt;user, video&gt; pairs -&gt; labeling strategy based on explicit or implicit feedback<br>
+e.g. "positive" if user liked the item explicitly or interacted (e.g. watched/played) at least for X (e.g. half of it).<br>
+negative samples: sample from background distribution -&gt; correct via importance smapling</p>
+<h2 id="5-feature-engineering-2">5. Feature engineering </h2>
+<p>There are several machine learning features that can be extracted from games. Here are some examples:</p>
+<ul>
+<li>Game metadata features</li>
+<li>Game state: e.g. the positions of players, the status of objects and obstacles, the time remaining, and the score.</li>
+<li>Game mechanics: The rules and interactions that govern the game.</li>
+<li>User engagement: e.g. the length of play sessions, frequency of play, and player retention rates.</li>
+<li>Social interactions: b/w players: to identify patterns of behavior, such as the formation of alliances, the sharing of resources, and the types of communication used between players.</li>
+<li>Player preferences: which game features are most popular among players, which can help inform game design decisions.</li>
+<li>Player behaviors: player movement patterns, the types of actions taken by players, and the strategies used to achieve objectives.</li>
+</ul>
+<p>We select some important features as follows:</p>
+<ul>
+<li>
+<p>Game metadata features:</p>
+<ul>
+<li>Game ID,<br>
+Duration,<br>
+Language,<br>
+Title,<br>
+Description,<br>
+Genre/Category,<br>
+Tags,<br>
+Publisher(popularity, reviews),<br>
+Release date,<br>
+Ratings,<br>
+Reviews,<br>
+(Game content ?)<br>
+game titles, genres, platforms, release dates, user ratings, and user reviews.</li>
+</ul>
+</li>
+<li>
+<p>User profile:</p>
+<ul>
+<li>User ID, Age, Gender, Language, City, Country</li>
+</ul>
+</li>
+<li>
+<p>User-item historical features:</p>
+<ul>
+<li>User-item interactions
+<ul>
+<li>Played, liked, impressions</li>
+<li>purchase history (avg. price)</li>
+</ul>
+</li>
+<li>User search history</li>
+</ul>
+</li>
+<li>
+<p>Context</p>
+</li>
+</ul>
+<h3 id="feature-representation">Feature representation: </h3>
+<ul>
+<li>Categorical data (game_id, user_id, language, city): Use embedding layers, learned during<br>
+training</li>
+<li>Categorical_data(gender, age): one_hot</li>
+<li>Continuous variables: normalize, or bucketize and one-hot (e.g. price)</li>
+<li>Text:(title, desc, tags): title/description use embeddings, pre-trained BERT, fine tune on game language?, tags: CBOW</li>
+<li></li>
+<li>Game content embeddings?</li>
+</ul>
+<h2 id="6-model-development-and-offline-evaluation-2">6. Model Development and Offline Evaluation </h2>
+<h3 id="61-candidate-generation">6.1 Candidate Generation </h3>
+<p>For candidate generation 1 (Relevance Based), we choose CF.</p>
+<p>For CF there are two embedding based modeling options:</p>
+<ol>
+<li>Matrix Factorization
+<ul>
+<li>Pros: Training speed (only two matrices to learn), Serving speed (static learned embeddings)</li>
+<li>Cons: only relies on user-item interactions (No user profile info e.g. language is used); new-user cold start problem</li>
+</ul>
+</li>
+<li>Two tower neural network:
+<ul>
+<li>Pros: Accepts user features (user profile + user search history) -&gt; better quality recommendation; handles new users</li>
+<li>Cons: Expensive training, serving speed</li>
+</ul>
+</li>
+</ol>
+<p>We chose two-tower network here.</p>
+<h4 id="two-tower-network">Two-tower network </h4>
+<ul>
+<li>two encoder towers (user tower + encoder tower)</li>
+<li>user tower encodes user features into user embeddings  <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">u</span></span></span></span></li>
+<li>item tower encodes item features into item embeddings   <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">v_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
+<li>similarity <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">u</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">v_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> is considered as a relevance score (ranking as classification problem)</li>
+</ul>
+<h4 id="loss-function">Loss function: </h4>
+<p>Minimize cross entropy for each positive label and sampled negative examples</p>
+<h3 id="62-ranking">6.2 Ranking </h3>
+<p>For Ranking stage, we prioritize precision over efficiency. We choose content based filtering. Choose a model that relies in item features.<br>
+ML Obj options:</p>
+<ul>
+<li>max P(watch| U, C)</li>
+<li>max expected total watch time</li>
+<li>multi-objective (multi-task learning: add corresponding losses)</li>
+</ul>
+<p>Model Options:</p>
+<ul>
+<li>FF NN (e.g. similar tower network to a tower network) + logistic regression</li>
+<li>Deep Cross Network (DCN)</li>
+</ul>
+<p>Features</p>
+<ul>
+<li>Video ID embeddings (watched video embedding avg, impression video embedding),</li>
+<li>Video historic
+<ul>
+<li>No. of previous impressions, reviews, likes, etc</li>
+<li>Time features (e.g. time since last play),</li>
+</ul>
+</li>
+<li>Language embedding (user, item),</li>
+<li>User profile</li>
+<li>User Historic (e.g. search history)</li>
+</ul>
+<h3 id="63-re-ranking">6.3 Re-Ranking </h3>
+<p>Re-ranks items by additional business criteria (filter, promote)<br>
+We can use ML models for clickbait, harmful content, etc or use heuristics<br>
+Examples:</p>
+<ul>
+<li>Age restriction filter</li>
+<li>Region restriction filter</li>
+<li>Video freshness (promote fresh content)</li>
+<li>Deduplication</li>
+<li>Fairness, bias, etc</li>
+</ul>
+<h2 id="7-prediction-service-2">7. Prediction Service </h2>
+<p>two-tower network inference: find the k-top most relevant items given a user -&gt;<br>
+It's a classic nearest neighbor problem -&gt; use approximate nearest neighbor (ANN) algorithms</p>
+<h2 id="8-online-testing-and-deployment-2">8. Online Testing and Deployment </h2>
+<p>Standard approaches as before.</p>
+<h2 id="9-scaling-1">9. Scaling </h2>
+<p>The three stage candidate generation - ranking - re-ranking can be scaled well as described earlier. It also meets the requirements of speed (funnel architecture), precision(ranking component), and diversity (multiple candid generation).</p>
+<h3 id="cold-start-problem">Cold start problem: </h3>
+<ul>
+<li>new users: two tower architectures accepts new users and we can still use user profile info even with no interaction</li>
+<li>new items: recommend to random users and collect some data - then fine tune the model using new data</li>
+</ul>
+<h3 id="training">Training: </h3>
+<p>We need to be able to fine tune the model</p>
+<h3 id="exploration-exploitation-trade-off">Exploration exploitation trade-off </h3>
+<ul>
+<li>Multi-armed bandit (an agent repeatedly selects an option and receives a reward/cost. The goal of to maximize its cumulative reward over time, while simultaneously learning which options are most valuable.)</li>
+</ul>
+<h3 id="other-extensions">Other Extensions: </h3>
+<ul>
+<li><a href="https://daiwk.github.io/assets/youtube-multitask.pdf">Multi-task learning</a>
+<ul>
+<li>Includes a shared feature extractor that is trained jointly with multiple prediction heads, each of which is responsible for predicting a different aspect of user behavior, such as click-through rate, watch time, and view count. The model is trained using a combination of supervised and unsupervised learning techniques, including cross-entropy loss, pairwise ranking loss, and self-supervised contrastive learning.</li>
+</ul>
+</li>
+<li>Positional bias (detection and correction)</li>
+<li>Selection bias (detection and correction)</li>
+<li>Add negative feedback (dislike)</li>
+<li>Locality preservation:
+<ul>
+<li>Use sequential user behavior info (CBOW model)</li>
+</ul>
+</li>
+<li>effect of seasonality</li>
+<li>what if we only have a query and personal (item, provider) history?
+<ul>
+<li>item embeddings, provider embeddings, query embeddings</li>
+<li>we can build a query-aware attention mechanism that computes</li>
+</ul>
+</li>
+</ul>
+<h3 id="more-resources">More resources </h3>
+<ul>
+<li><a href="https://www.kaggle.com/code/fetenbasak/content-based-recommendation-game-recommender">Content-based</a>, <a href="https://www.kaggle.com/code/greentearus/steam-reviews-nlp-analysis">NLP analysis</a>, <a href="https://www.kaggle.com/code/krsnewwave/collaborative-denoising-autoencoder-steam">Collaborative Denoising AE</a></li>
+<li><a href="https://github.com/manandesai/game-recommendation-engine">User-based CF, item-based CF and MF</a> (<a href="https://github.com/manandesai/game-recommendation-engine/blob/main/recommenders.ipynb">github</a>)</li>
+<li><a href="https://github.com/AudreyGermain/Game-Recommendation-System">CF and content based</a></li>
+</ul>
+<h1 id="harmful-content-detection-on-social-media">Harmful content detection on social media </h1>
+<h3 id="1-problem-formulation-3">1. Problem Formulation </h3>
+<ul>
+<li>
+<p>Clarifying questions</p>
+<ul>
+<li>What types of harmful content are we aiming to detect? (e.g., hate speech, explicit images, cyberbullying)?</li>
+<li>What are the potential sources of harmful content? (e.g., social media, user-generated content platforms)</li>
+<li>Are there specific legal or ethical considerations for content moderation</li>
+<li>What is the expected volume of content to be analyzed daily?</li>
+<li>What are supported languages?</li>
+<li>Are there human annotators available for labeling?</li>
+<li>Is there a feature for users to report harmful content? (click, text, etc).</li>
+<li>Is explainablity important here?</li>
+</ul>
+</li>
+<li>
+<p>Integrity deals with:</p>
+<ul>
+<li>Harmful content (focus here)</li>
+<li>Harmful act/actors</li>
+</ul>
+</li>
+<li>
+<p>Goal: monitor posts, detect harmful content, and demote/remove</p>
+</li>
+<li>
+<p>Examples harmful content categories: violence, nudity, hate speech</p>
+</li>
+<li>
+<p>ML objective: predict if a post is harmful</p>
+<ul>
+<li>Input: Post (MM: text, image, video)</li>
+<li>Output:  P(harmful) or P(violent), P(nude), P(hate), etc</li>
+</ul>
+</li>
+<li>
+<p>ML Category: Multimodal (Multi-label) classification</p>
+</li>
+<li>
+<p>Data: 500M posts / day (about 10K annotated)</p>
+</li>
+<li>
+<p>Latency: can vary for different categories</p>
+</li>
+<li>
+<p>Able to explain the reason to the users (category)</p>
+</li>
+<li>
+<p>support different languages? Yes</p>
+</li>
+</ul>
+<h3 id="2-metrics-1">2. Metrics </h3>
+<ul>
+<li>Offline
+<ul>
+<li>F1 score, PR-AUC, ROC-AUC</li>
+</ul>
+</li>
+<li>Online
+<ul>
+<li>prevalence (percentage of harmful posts didn't prevent over all posts), harmful impressions, percentage of valid (reversed) appeals, proactive rate (ratio of system detected over system + user detected)</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-architectural-components-1">3. Architectural Components </h3>
+<ul>
+<li>Multimodal input (text, image, video, etc):
+<ul>
+<li>Multimodal fusion techniques
+<ul>
+<li>Early Fusion: modalities combined first, then make a single prediction</li>
+<li>Late Fusion: process modalities independently, fuse predictions
+<ul>
+<li>cons: separate training data for modalities, comb of individually safe content might be harmful</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Multi-Label/Multi-Task classification
+<ul>
+<li>Single binary classifier (P(harmful))
+<ul>
+<li>easy, not explainable</li>
+</ul>
+</li>
+<li>One binary classifier per harm category (p(violence), p(nude), p(hate))
+<ul>
+<li>multiple models, trained and maintained separately, expensive</li>
+</ul>
+</li>
+<li>Single multi-label classifier
+<ul>
+<li>complicated task to learn</li>
+</ul>
+</li>
+<li>Multi-task classifier: learn multi tasks simultanously
+<ul>
+<li>single shared layers (learns similarities between tasks) -&gt; transformed features</li>
+<li>task specific layers: classification heads</li>
+<li>pros: single model, shared layers prevent redundancy, train data for each task can be used for others as well (limited data)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-data-collection-and-preparation-1">4. Data Collection and Preparation </h3>
+<ul>
+<li>Main actors for which data is available:
+<ul>
+<li>Users
+<ul>
+<li>user_id, age, gender, location, contact</li>
+</ul>
+</li>
+<li>Items(Posts)
+<ul>
+<li>post_id, author_id, text context, images, videos, links, timestamp</li>
+</ul>
+</li>
+<li>User-post interactions
+<ul>
+<li>user_id, post_id, interaction_type, value, timestamp</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-feature-engineering-3">5. Feature Engineering </h3>
+<p>Features:<br>
+Post Content (text, image, video) + Post Interactions (text + structured) + Author info + Context</p>
+<ul>
+<li>Posts
+<ul>
+<li>Text:
+<ul>
+<li>Preprocessing (normalization + tokenization)</li>
+<li>Encoding (Vectorization):
+<ul>
+<li>Statistical (BoW, TF-IDF)</li>
+<li>ML based encoders (BERT)</li>
+</ul>
+</li>
+<li>We chose pre-trained ML based encoders (need semantics of the text)</li>
+<li>We chose Multilingual Distilled (smaller, faster) version of BERT (need context), DistilmBERT</li>
+</ul>
+</li>
+<li>Images/ Videos:
+<ul>
+<li>Preprocessing: decoding, resize, scaling, normalization</li>
+<li>Feature extraction: pre-trained feature extractors
+<ul>
+<li>Images:
+<ul>
+<li>CLIP's visual encoder</li>
+<li>SImCLR</li>
+</ul>
+</li>
+<li>Videos:
+<ul>
+<li>VideoMoCo</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Post interactions:
+<ul>
+<li>No. of likes, comments, shares, reports (scale)</li>
+<li>Comments (text): similar to the post text (aggregate embeddings over comments)</li>
+</ul>
+</li>
+<li>Users:
+<ul>
+<li>Only use post author's info
+<ul>
+<li>demographics (age, gender, location)</li>
+<li>account features (No. of followers /following, account age)</li>
+<li>violation history (No of violations, No of user reports, profane words rate)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Context:
+<ul>
+<li>Time of day, device</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-model-development-and-offline-evaluation-3">6. Model Development and Offline Evaluation </h3>
+<ul>
+<li>Model selection
+<ul>
+<li>NN: we use NN as it's commonly used for multi-task learning</li>
+</ul>
+</li>
+<li>HP tuniing:
+<ul>
+<li>No of hidden layers, neurons in layers, act. fcns, learning rate, etc</li>
+<li>grid search commonly used</li>
+</ul>
+</li>
+<li>Dataset:
+<ul>
+<li>Natural labeling (user reports) - speed</li>
+<li>Hand labeling (human contractors) - accuracy</li>
+<li>we use natural labeling for train set (speed) and manual for eval set (accuracy)</li>
+</ul>
+</li>
+<li>loss function:
+<ul>
+<li>L = L1 + L2 + L3 ... for each task</li>
+<li>each task is a binary classific so e.g. CE for each task</li>
+</ul>
+</li>
+<li>Challenge for MM training:
+<ul>
+<li>overfitting (when one modality e.g. image dominates training)
+<ul>
+<li>gradient blending and focal loss</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="7-prediction-service-3">7. Prediction Service </h3>
+<ul>
+<li>3 main components:
+<ul>
+<li>Harmful content detection service</li>
+<li>Demoting service (prob of harm with low confidence)</li>
+<li>violation service (prob of harm with high confidence)</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-online-testing-and-deployment-3">8. Online Testing and Deployment </h3>
+<h3 id="9-scaling-monitoring-and-updates-1">9. Scaling, Monitoring, and Updates </h3>
+<h3 id="10-other-topics-1">10. Other topics </h3>
+<ul>
+<li>biases by human labeling</li>
+<li>use temporal information (e.g. sequence of actions)</li>
+<li>detect fake accounts</li>
+<li>architecture improvement: linear transformers</li>
+</ul>
+<h1 id="image-search-system-pinterest">Image Search System (Pinterest) </h1>
+<h3 id="1-problem-formulation-4">1. Problem Formulation </h3>
+<ul>
+<li>Clarifying questions
+<ul>
+<li>What is the primary (business) objective of the visual search system?</li>
+<li>What are the specific use cases and scenarios where it will be applied?</li>
+<li>What are the system requirements (such as response time, accuracy, scalability, and integration with existing systems or platforms)?</li>
+<li>How will users interact with the system? (click, like, share, etc)? Click only</li>
+<li>What types of visual content will the system search through (images, videos, etc.)? Images only</li>
+<li>Are there any specific industries or domains where this system will be deployed (e.g., fashion, e-commerce, art, industrial inspection)?</li>
+<li>What is the expected scale of the system in terms of data and user interactions?</li>
+<li>Personalized? not required</li>
+<li>Can we use metadata? In general yes, here let's not.</li>
+<li>Can we assume the platform provides images which are safe? Yes</li>
+</ul>
+</li>
+<li>Use case(s) and business goal
+<ul>
+<li>Use case: allowing users to search for visually similar items, given a query image by the user</li>
+<li>business goal: enhance user experience, increase click through rate, conversion rates, etc (depends on use case)</li>
+</ul>
+</li>
+<li>Requirements
+<ul>
+<li>response time, accuracy, scalability (billions of images)</li>
+</ul>
+</li>
+<li>Constraints
+<ul>
+<li>budget limitations, hardware limitations, or legal and privacy constraints</li>
+</ul>
+</li>
+<li>Data: sources and availability
+<ul>
+<li>sources of visual data: user-generated, product catalogs, or public image databases?</li>
+<li>Available?</li>
+</ul>
+</li>
+<li>Assumptions</li>
+<li>ML formulation:
+<ul>
+<li>ML Objective: retrieve images that are similar to query image in terms of visual content</li>
+<li>ML I/O: I: a query image, and O: a ranked list of most similar images to the query image</li>
+<li>ML category: Ranking problem (rank a collection of items based on their relevance to a query)</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-metrics-2">2. Metrics </h3>
+<ul>
+<li>Offline metrics
+<ul>
+<li>MRR</li>
+<li>Recall@k</li>
+<li>Precision@k</li>
+<li>mAP</li>
+<li>nDCG</li>
+</ul>
+</li>
+<li>Online metrics
+<ul>
+<li>CTR</li>
+<li>Time spent on images</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-architectural-components-2">3. Architectural Components </h3>
+<ul>
+<li>High level architecture
+<ul>
+<li>Representation learning:
+<ul>
+<li>transform input data into representations (embeddings) - similar images are close in their embedding space</li>
+<li>use distance between embeddings as a similarity measure between images</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-data-collection-and-preparation-2">4. Data Collection and Preparation </h3>
+<ul>
+<li>Data Sources
+<ul>
+<li>User profile</li>
+<li>Images
+<ul>
+<li>image file</li>
+<li>metadata</li>
+</ul>
+</li>
+<li>User-image interactions: impressions, clicks:</li>
+<li>Context</li>
+</ul>
+</li>
+<li>Data storage</li>
+<li>ML Data types</li>
+<li>Labelling</li>
+</ul>
+<h3 id="5-feature-engineering-4">5. Feature Engineering </h3>
+<ul>
+<li>Feature selection
+<ul>
+<li>User profile : User_id, username, age, gender, location (city, country), lang, timezone</li>
+<li>Image metadata: ID, user ID, tags, upload date, ...</li>
+<li>User-image interactions: impressions, clicks:
+<ul>
+<li>user id, Query img id, returned img id, interaction type (click, impression), time, location</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Feature representation
+<ul>
+<li>Representation learning (embedding)</li>
+</ul>
+</li>
+<li>Feature preprocessing
+<ul>
+<li>common feature preprocessing for images:
+<ul>
+<li>Resize (e.g. 224x224), Scale (0-1), normalize (mean 0, var 1), color mode (RGB, CMYK)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-model-development-and-offline-evaluation-4">6. Model Development and Offline Evaluation </h3>
+<ul>
+<li>Model selection
+<ul>
+<li>we choose NN because of
+<ul>
+<li>unstructured data (images, text) -&gt; NN good at it</li>
+<li>embeddings needed</li>
+</ul>
+</li>
+<li>Architecture type:
+<ul>
+<li>CNN based e.g. ResNet</li>
+<li>Transformer based (ViT)</li>
+<li>Example: Image -&gt; Convolutional layers -&gt; FC layers -&gt; embedding vector</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Model Training
+<ul>
+<li>contrastive learning -&gt; used for image representation learning
+<ul>
+<li>train to distinguish similar and dissimilar items (images)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Dataset
+<ul>
+<li>each data point: query img, positive sample (similar to q), n - 1 neg samples (dissimilar)
+<ul>
+<li>query img : randomly choose</li>
+<li>neg samples: randomly choose</li>
+<li>positive samples: human judge, interactions (e.g. click) as a proxy, artificial image generated from q (self supervision)
+<ul>
+<li>human: expensive, time consuming</li>
+<li>interactions: noisy and sparse</li>
+<li>artificial: augment (e.g. rotate) and use as a positive sample (similar to simCLR or MoCo) - data distribution differs in reality</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Loss Function: contrastive loss
+<ul>
+<li>contrastive loss:
+<ul>
+<li>works on pairs (Eq, Ei)</li>
+<li>calculate distance: b/w pairs -&gt; softmax -&gt; cross entropy &lt;- Labels</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Model eval and HP tuning</li>
+<li>Iterations</li>
+</ul>
+<h3 id="7-prediction-service-4">7. Prediction Service </h3>
+<ul>
+<li>
+<p>Prediction pipeline</p>
+<ul>
+<li>Embedding generation service
+<ul>
+<li>image -&gt; preprocess -&gt; embedding gen (ML model) -&gt; img embedding</li>
+</ul>
+</li>
+<li>NN search service
+<ul>
+<li>retrieve the most similar images from embedding space
+<ul>
+<li>Exact: O(N.D)</li>
+<li>Approximate(ANN) - sublinear e.g. O(D.logN)
+<ul>
+<li>Tree based ANN (e.g. R-trees, Kd-trees)
+<ul>
+<li>partition space into two (or more) at each non-leaf node,</li>
+<li>only search the partition for query q</li>
+</ul>
+</li>
+<li>Locality Sensitive Hashing LSH
+<ul>
+<li>using hash functions to group points into buckets (close points into same buckets)</li>
+</ul>
+</li>
+<li>Clustering based</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>We use ANN using an existing library like Faiss (Facebook)</li>
+</ul>
+</li>
+<li>Re-ranking service
+<ul>
+<li>business level logic and policies (e.g. filter inappropriate or private items, deduplicate, etc)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Indexing pipeline</p>
+<ul>
+<li>Indexing service: indexes images by their embeddings</li>
+<li>keep the table updated for new images</li>
+<li>increases memory usage -&gt; use optimization (vector / product quantization)</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-online-testing-and-deployment-4">8. Online Testing and Deployment </h3>
+<ul>
+<li>A/B Test</li>
+<li>Deployment and release</li>
+</ul>
+<h3 id="9-scaling-monitoring-and-updates-2">9. Scaling, Monitoring, and Updates </h3>
+<ul>
+<li>Scaling (SW and ML systems)</li>
+<li>Monitoring</li>
+<li>Updates</li>
+</ul>
+<h3 id="10-other-points">10. Other points: </h3>
+<h1 id="multimodal-video-search-system">Multimodal Video Search System </h1>
+<h3 id="1-problem-formulation-5">1. Problem Formulation </h3>
+<ul>
+<li>
+<p>Clarifying questions</p>
+<ul>
+<li>What is the primary (business) objective of the search system?</li>
+<li>What are the specific use cases and scenarios where it will be applied?</li>
+<li>What are the system requirements (such as response time, accuracy, scalability, and integration with existing systems or platforms)?</li>
+<li>What is the expected scale of the system in terms of data and user interactions?</li>
+<li>Is their any data available? What format?</li>
+<li>Can we use video metadata? Yes</li>
+<li>Personalized? not required</li>
+<li>How many languages needs to be supported?</li>
+</ul>
+</li>
+<li>
+<p>Use case(s) and business goal</p>
+<ul>
+<li>Use case: user enters text query into search box, system shows the most relevant videos</li>
+<li>business goal: increase click through rate, watch time, etc.</li>
+</ul>
+</li>
+<li>
+<p>Requirements</p>
+<ul>
+<li>response time, accuracy, scalability (50M DAU)</li>
+</ul>
+</li>
+<li>
+<p>Constraints</p>
+<ul>
+<li>budget limitations, hardware limitations, or legal and privacy constraints</li>
+</ul>
+</li>
+<li>
+<p>Data: sources and availability</p>
+<ul>
+<li>Sources: videos (1B), text</li>
+<li>10M pairs of &lt;video, text_query&gt;. Videos have metadata (title, description, tags) in text format</li>
+</ul>
+</li>
+<li>
+<p>Assumptions</p>
+</li>
+<li>
+<p>ML formulation:</p>
+<ul>
+<li>ML Objective: retrieve videos that are relevant to a text query</li>
+<li>ML I/O: I: text query from a user, O: ranked list of relevant videos on a video sharing platform</li>
+<li>ML category: Visual search + Text Search systems</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-metrics-3">2. Metrics </h3>
+<ul>
+<li>Offline
+<ul>
+<li>Precision@k, mAP, Recall@k, MRR</li>
+<li>we choose MRR (avg rank of first relevant element in results) due to the format of our eval data &lt;video, text&gt; pair</li>
+</ul>
+</li>
+<li>Online
+<ul>
+<li>CTR: problem: doesn't track relevancy, click baits</li>
+<li>video completion rate: partially watched videos might still found relevant by user</li>
+<li>total watch time</li>
+<li>we choose total watch time: good indicator of relevance</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-architectural-components-3">3. Architectural Components </h3>
+<p>Multimodal search (video, text) for video content from text query:</p>
+<ul>
+<li>Visual search system
+<ul>
+<li>Text query -&gt; videos (based on similarity of text and visual content)</li>
+<li>Two tower embedding architecture (video and text_query encoders)</li>
+</ul>
+</li>
+<li>Textual search system
+<ul>
+<li>search for most similar titles, descs, and tags  w/ text query</li>
+<li>we can use Inverted Index (e.g. elastic search) for efficient full text search
+<ul>
+<li>An inverted index is a data structure that maps terms (words) to the documents or locations where they appear, enabling efficient text-based document retrieval, commonly used in search engines.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-data-collection-and-preparation-3">4. Data Collection and Preparation </h3>
+<p>We use provided annotated data in the format of &lt;video_id, query&gt;.</p>
+<h3 id="5-feature-engineering-5">5. Feature Engineering </h3>
+<ul>
+<li>Preprocessing unstructured data
+<ul>
+<li>Text pre-processing : normalization, tokenization, token to ids</li>
+<li>Video preprocessing: decode into frames -&gt; sample -&gt; resize -&gt; scale, normalize, color correct</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-model-development-and-offline-evaluation-5">6. Model Development and Offline Evaluation </h3>
+<ul>
+<li>
+<p>Model Selection</p>
+<ul>
+<li>
+<p>Text encoders:</p>
+<ul>
+<li>Text -&gt; Vector (Embeddings)</li>
+<li>Two approaches:
+<ul>
+<li>Statistical (BoW, TF-IDF)</li>
+<li>ML encoders (word2vec, transformer based e.g. BERT)</li>
+</ul>
+</li>
+<li>We chose transformer based (BERT).</li>
+</ul>
+</li>
+<li>
+<p>Video encoders:</p>
+<ul>
+<li>Video-level
+<ul>
+<li>more expensive, but captures temporal understanding</li>
+<li>Example: ViViT (Video Vision Transformer)</li>
+</ul>
+</li>
+<li>Frame-level (from sample frames and aggregate)
+<ul>
+<li>less expensive (training and serving speed, compute power)</li>
+<li>Example: ViT</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Model Training</p>
+<ul>
+<li>contrastive learning (similar to visual search system).</li>
+</ul>
+</li>
+</ul>
+<h3 id="7-prediction-service-5">7. Prediction Service </h3>
+<p>Components:</p>
+<ul>
+<li>Visual search from text query
+<ul>
+<li>text -&gt; preprocess -&gt; encoder -&gt; embedding</li>
+<li>videos are indexed by their encoded embeddings</li>
+<li>search: using approximate nearest neighbor search (ANN)</li>
+</ul>
+</li>
+<li>Textual search
+<ul>
+<li>using Elasticsearch (full text / fuzzy search)</li>
+</ul>
+</li>
+<li>Fusion
+<ul>
+<li>re-rank based on weighted sum of rel scores</li>
+<li>re-rank using a model</li>
+</ul>
+</li>
+<li>Re-ranking
+<ul>
+<li>business level logic and policies</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-online-testing-and-deployment-5">8. Online Testing and Deployment </h3>
+<h3 id="9-scaling-monitoring-and-updates-3">9. Scaling, Monitoring, and Updates </h3>
+<h1 id="news-feed-system">News Feed System </h1>
+<h3 id="1-problem-formulation-6">1. Problem Formulation </h3>
+<p>show feed (recent posts and activities from other users) on a social network platform</p>
+<ul>
+<li>
+<p>Clarifying questions</p>
+<ul>
+<li>What is the primary business objective of the system? (increase user engagement)</li>
+<li>Do we show only posts or also activities from other users?</li>
+<li>What types of engagement are available? (like, click, share, comment, hide, etc)? Which ones are we optimizing for?</li>
+<li>Do we display ads as well?</li>
+<li>What types of data do the posts include? (text, image, video)?</li>
+<li>Are there specific user segments or contexts we should consider (e.g., user demographics)?</li>
+<li>Do we have negative feedback features (such as hide ad, block, etc)?</li>
+<li>What type of user-ad interaction data do we have access to can we use it for training our models?</li>
+<li>Do we need continual training?</li>
+<li>How do we collect negative samples? (not clicked, negative feedback).</li>
+<li>How fast the system needs to be?</li>
+<li>What is the scale of the system?</li>
+<li>Is personalization needed? Yes</li>
+</ul>
+</li>
+<li>
+<p>Use case(s) and business goal</p>
+<ul>
+<li>use case: show friends most engaging (and unseen) posts and activities on a social network platform app (personalized to user)</li>
+<li>business objective: Maximize user engagement (as a set of interactions)</li>
+</ul>
+</li>
+<li>
+<p>Requirements;</p>
+<ul>
+<li>Latency: 200 msec of newsfeed refreshed results after user opens/refreshes the app</li>
+<li>Scalability: 5 B total users, 2 B DAU, refresh app twice</li>
+</ul>
+</li>
+<li>
+<p>Constraints:</p>
+<ul>
+<li>Privacy and compliance with data protection regulations.</li>
+</ul>
+</li>
+<li>
+<p>Data: Sources and Availability:</p>
+<ul>
+<li>Data sources include user interaction logs, ad content data, user profiles, and contextual information.</li>
+<li>Historical click and impression data for model training and evaluation.</li>
+</ul>
+</li>
+<li>
+<p>Assumptions:</p>
+<ul>
+<li>Users' engagement behavior can be characterized by their explicit (e.g. like, click, share, comment, etc) or implicit interactions (e.g. dwell time)</li>
+</ul>
+</li>
+<li>
+<p>ML Formulation:</p>
+<ul>
+<li>Objective:
+<ul>
+<li>maximize number of explicit, implicit, or both type of reactions (weighted)</li>
+<li>implicit: more data, explicit: stronger signal, but less data -&gt; weighted score of different interactions: share &gt; comment &gt; like &gt; click etc</li>
+</ul>
+</li>
+<li>I/O: I: user_id, O: ranked list of unseen posts sorted by engagement score (wighted sum)</li>
+<li>Category: Ranking problem: can be solved as pointwise LTR with multi/label (multi-task) classification</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-metrics-4">2. Metrics </h3>
+<ul>
+<li>Offline
+<ul>
+<li>ROC AUC (trade-off b/w TPR and FPR)</li>
+</ul>
+</li>
+<li>Online
+<ul>
+<li>CTR,</li>
+<li>Reactions rate (like rate, comment rate, etc)</li>
+<li>Time spent</li>
+<li>User satisfaction (survey)</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-architectural-components-4">3. Architectural Components </h3>
+<ul>
+<li>High level architecture
+<ul>
+<li>We can use point-wise learning to rank (LTR) formulation</li>
+<li>Options for multi-label/task classification:
+<ul>
+<li>Use N independent classifiers (expensive to train and maintain)</li>
+<li>Use a multi-task classifier
+<ul>
+<li>learn multi tasks simultaneously</li>
+<li>single shared layers (learns similarities between tasks) -&gt; transformed features</li>
+<li>task specific layers: classification heads</li>
+<li>pros: single model, shared layers prevent redundancy, train data for each task can be used for others as well (limited data)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-data-collection-and-preparation-4">4. Data Collection and Preparation </h3>
+<ul>
+<li>
+<p>Data Sources</p>
+<ul>
+<li>Users,</li>
+<li>Posts,</li>
+<li>User-post interaction</li>
+<li>User-user (friendship)</li>
+</ul>
+</li>
+<li>
+<p>Labelling</p>
+</li>
+</ul>
+<h3 id="5-feature-engineering-6">5. Feature Engineering </h3>
+<ul>
+<li>
+<p>Feature selection</p>
+<ul>
+<li>Posts:
+<ul>
+<li>Text</li>
+<li>Image/videos</li>
+<li>No of reactions (likes, shares, replies, etc)</li>
+<li>Age</li>
+<li>Hashtags</li>
+</ul>
+</li>
+<li>User:
+<ul>
+<li>ID, username</li>
+<li>Demographics (Age, gender, location)</li>
+<li>Context (device, time of day, etc)</li>
+<li>Interaction history (e.g. user click rate, total clicks, likes, et )</li>
+</ul>
+</li>
+<li>User-Post interaction:
+<ul>
+<li>IDs(user, Ad), interaction type, time, location</li>
+</ul>
+</li>
+<li>User-user(post author) affinities
+<ul>
+<li>connection type</li>
+<li>reaction history (No liked/commented/etc posts from author)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Feature representation / preparation</p>
+<ul>
+<li>
+<p>Text:</p>
+<ul>
+<li>use a pre-trained LM to get embeddings</li>
+<li>use BERT here (posts are in phrases usually, context aware helps)</li>
+</ul>
+</li>
+<li>
+<p>Image / Video:</p>
+<ul>
+<li>preprocess</li>
+<li>use pre-trained models e.g. SimCLR / CLIP to convert -&gt; feature vector</li>
+</ul>
+</li>
+<li>
+<p>Dense numerical features:</p>
+<ul>
+<li>Engagement feats (No of clicks, etc)
+<ul>
+<li>use directly + scale the range</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Discrete numerical:</p>
+<ul>
+<li>Age: bucketize into categorical then one hot</li>
+</ul>
+</li>
+<li>
+<p>Hashtags:</p>
+<ul>
+<li>tokenize, token to ID, simple vectorization (TF-IDF or word2vec) - no context</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-model-development-and-offline-evaluation-6">6. Model Development and Offline Evaluation </h3>
+<ul>
+<li>
+<p>Model selection</p>
+<ul>
+<li>We choose NN
+<ul>
+<li>unstructured data (text, img, video)</li>
+<li>embedding layers for categorical features</li>
+<li>fine tune pre-trained models used for feat eng.</li>
+</ul>
+</li>
+<li>multi-labels
+<ul>
+<li>P(click), P(like), P(Share), P(comment)</li>
+</ul>
+</li>
+<li>Two options:
+<ul>
+<li>N NN classifiers</li>
+<li>Multi task NN (choose this)
+<ul>
+<li>Shared layers</li>
+<li>Classification heads (click, like, share, comment)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Passive users problem:
+<ul>
+<li>All their Ps will be small</li>
+<li>add two more heads
+<ul>
+<li>Dwell time (seconds spent on post)</li>
+<li>P(skip) (skip = spend time &lt; t)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Model Training</p>
+<ul>
+<li>Loss function:
+<ul>
+<li>L = sum of L_is for each task</li>
+<li>for binary classif tasks: CE</li>
+<li>for regression task: MAE, MSE, or Huber loss</li>
+</ul>
+</li>
+<li>Dataset
+<ul>
+<li>use features, post features, interactions, labels</li>
+<li>labels: positive, negative for each task (like, didn't like etc)
+<ul>
+<li>for dwell time: it's a regression</li>
+</ul>
+</li>
+<li>Imbalanced dataset: downsample negative</li>
+</ul>
+</li>
+<li>Model eval and HP tuning</li>
+<li>Iterations</li>
+</ul>
+</li>
+</ul>
+<h3 id="7-prediction-service-6">7. Prediction Service </h3>
+<ul>
+<li>
+<p>Data Prep pipeline</p>
+<ul>
+<li>static features -&gt; batch feature compute (daily, weekly) -&gt; feature store</li>
+<li>dynamic features: # of post clicks, etc _&gt; streaming</li>
+</ul>
+</li>
+<li>
+<p>Prediction pipeline</p>
+<ul>
+<li>two stage (funnel) architecture
+<ul>
+<li>candidate generation / retrieval service
+<ul>
+<li>rule based</li>
+<li>filter and fetch unseen posts by users under certain criteria</li>
+</ul>
+</li>
+<li>Ranking
+<ul>
+<li>features -&gt; model -&gt; engagement prob. -&gt; sort</li>
+<li>re-ranking: business logic, additional logic and filters (e.g. user interest category)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Continual learning pipeline</p>
+<ul>
+<li>fine tune on new data, eval, and deploy if improves metrics</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-online-testing-and-deployment-6">8. Online Testing and Deployment </h3>
+<ul>
+<li>A/B Test</li>
+<li>Deployment and release</li>
+</ul>
+<h3 id="9-scaling-monitoring-and-updates-4">9. Scaling, Monitoring, and Updates </h3>
+<ul>
+<li>Scaling (SW and ML systems)</li>
+<li>Monitoring</li>
+<li>Updates</li>
+</ul>
+<h3 id="10-other-topics-2">10. Other topics </h3>
+<ul>
+<li>Viral posts / Celebrities posts</li>
+<li>New users (cold start)</li>
+<li>Positional data bias</li>
+<li>Update frequency</li>
+<li>calibration:
+<ul>
+<li>fine-tuning predicted probabilities to align them with actual click probabilities</li>
+</ul>
+</li>
+<li>data leakage:
+<ul>
+<li>info from the test or eval dataset influences the training process</li>
+<li>target leakage, data contamination (from test to train set)</li>
+</ul>
+</li>
+<li>catastrophic forgetting
+<ul>
+<li>model trained on new data loses its ability to perform well on previously learned tasks</li>
+</ul>
+</li>
+</ul>
+<h1 id="friendsfollower-recommendation-people-you-may-know">Friends/Follower recommendation (People you may know) </h1>
+<h3 id="1-problem-formulation-7">1. Problem Formulation </h3>
+<p>Recommend a list of users that you may want to connect with</p>
+<ul>
+<li>Clarifying questions
+<ul>
+<li>What is the primary business objective of the system?</li>
+<li>What's the primary use case of the system?</li>
+<li>Are there specific factors needs to be considered for recommendations?</li>
+<li>Are friendships/connections symmetrical?</li>
+<li>What is the scale of the system? (users, connections)</li>
+<li>can we assume the social graph is not very dynamic?</li>
+<li>Do we need continual training?</li>
+<li>How do we collect negative samples? (not clicked, negative feedback).</li>
+<li>How fast the system needs to be?</li>
+<li>Is personalization needed? Yes</li>
+</ul>
+</li>
+</ul>
+<h2></h2>
+<ul>
+<li>
+<p>Use case(s) and business goal</p>
+<ul>
+<li>use case: PYMMK: recommend a list of users to connect with on social media app (e.g. facebook, linkedin)</li>
+<li>business objective: maximize number of formed connections</li>
+</ul>
+</li>
+<li>
+<p>Requirements;</p>
+<ul>
+<li>Scalability: 1 B total users, on avg. 10000 connection per user</li>
+</ul>
+</li>
+<li>
+<p>Constraints:</p>
+<ul>
+<li>Privacy and compliance with data protection regulations.</li>
+</ul>
+</li>
+<li>
+<p>Data: Sources and Availability:</p>
+</li>
+<li>
+<p>Assumptions:</p>
+<ul>
+<li>symmetric firendships</li>
+</ul>
+</li>
+<li>
+<p>ML Formulation:</p>
+<ul>
+<li>Objective:
+<ul>
+<li>maximize number of formed connections</li>
+</ul>
+</li>
+<li>I/O: I: user_id, O: ranked list of recommended users sorted by the relevance to the user</li>
+<li>ML Category: two options:
+<ul>
+<li>Ranking problem:
+<ul>
+<li>pointwise LTR - binary classifier (user_i, user_j) -&gt; p(connection)</li>
+<li>cons: doesn't capture social connections</li>
+</ul>
+</li>
+<li>Graph representation (edge prediction)
+<ul>
+<li>supplement with graph info (nodes, edges)</li>
+<li>input: social graph, predict edge b/w nodes</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-metrics-5">2. Metrics </h3>
+<ul>
+<li>
+<p>Offline</p>
+<ul>
+<li>GNN model: binary classification -&gt; ROC-AUC</li>
+<li>Recommendation system: binary relationships -&gt; mAP</li>
+</ul>
+</li>
+<li>
+<p>Online</p>
+<ul>
+<li>No of friend requests sent over X time</li>
+<li>No of friend requests accepted over X time</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-architectural-components-5">3. Architectural Components </h3>
+<ul>
+<li>High level architecture
+<ul>
+<li>Node-level predictions</li>
+<li>Edge-level predictions</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-data-collection-and-preparation-5">4. Data Collection and Preparation </h3>
+<ul>
+<li>
+<p>Data Sources</p>
+<ul>
+<li>Users,
+<ul>
+<li>demographics, edu and work backgrounds, skills, etc</li>
+<li>note: standardized data (e.g. cs / computer science)</li>
+</ul>
+</li>
+<li>User-user connections,</li>
+<li>User-user interactions,</li>
+</ul>
+</li>
+<li>
+<p>Labelling</p>
+</li>
+</ul>
+<h3 id="5-feature-engineering-7">5. Feature Engineering </h3>
+<ul>
+<li>
+<p>Feature selection</p>
+<ul>
+<li>
+<p>User:</p>
+<ul>
+<li>ID, username</li>
+<li>Demographics (Age, gender, location)</li>
+<li>Account/Network info: No of connections, followers, following, requests, etc, account age</li>
+<li>Interaction history (No of likes, shares, comments)</li>
+<li>Context (device, time of day, etc)</li>
+</ul>
+</li>
+<li>
+<p>User-user connections:</p>
+<ul>
+<li>Connection: IDs(user1, user2), connection type, timestamp, location</li>
+<li>edu and work affinity: major similarity, companies in common, industry similarity, etc</li>
+<li>social affinity: No. mutual connections (time discounted)</li>
+</ul>
+</li>
+<li>
+<p>User-user interactions:</p>
+<ul>
+<li>IDs(u user1, user2), interaction type, timestamp</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-model-development-and-offline-evaluation-7">6. Model Development and Offline Evaluation </h3>
+<ul>
+<li>
+<p>Model selection</p>
+<ul>
+<li>We choose GNN
+<ul>
+<li>operate on graph data</li>
+<li>predict prob of edge</li>
+<li>input: graph (node and edge features)</li>
+<li>output: embedding of each node</li>
+<li>use similarities b/w node embeddings for edge prediction</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Model Training</p>
+<ul>
+<li>snapshot of G at t. model predict connections at t+1</li>
+<li>Dataset
+<ul>
+<li>create a snapshot at time t</li>
+<li>compute node and edge features</li>
+<li>create labels using snapshot at t + 1 (if connection formed, positive)</li>
+</ul>
+</li>
+<li>Model eval and HP tuning</li>
+<li>Iterations</li>
+</ul>
+</li>
+</ul>
+<h3 id="7-prediction-service-7">7. Prediction Service </h3>
+<ul>
+<li>Prediction pipeline
+<ul>
+<li>Candidate generation
+<ul>
+<li>Friends of Friends (FoF) - rule based - from 1B to 1K.1K = 1M candidates -&gt; FoF service</li>
+</ul>
+</li>
+<li>Scoring service (using GNN model -&gt; embeddings -&gt; similarity scores)</li>
+<li>sort by score</li>
+</ul>
+</li>
+<li>pre-compute PYMK tables for each / active users and store in DB</li>
+<li>re-rank based on business logic</li>
+</ul>
+<h3 id="8-online-testing-and-deployment-7">8. Online Testing and Deployment </h3>
+<ul>
+<li>A/B Test</li>
+<li>Deployment and release</li>
+</ul>
+<h3 id="9-scaling-monitoring-and-updates-5">9. Scaling, Monitoring, and Updates </h3>
+<ul>
+<li>Scaling (SW and ML systems)</li>
+<li>Monitoring</li>
+<li>Updates</li>
+</ul>
+<h3 id="10-other-topics-3">10. Other topics </h3>
+<ul>
+<li>add a lightweight ranker</li>
+<li>bias problem</li>
+<li>delayed feedback problem (user accepts after days)</li>
+<li>personalized random walk (for baseline)</li>
+</ul>
+<h1 id="search-system">Search System </h1>
+<h3 id="1-problem-formulation-8">1. Problem Formulation </h3>
+<ul>
+<li>
+<p>Clarifying questions</p>
+<ul>
+<li>Is it a generalized search engine (like google) or specialized (like amazon product)?</li>
+<li>What is the primary (business) objective of the search system?</li>
+<li>What are the specific use cases and scenarios where it will be applied?</li>
+<li>What are the system requirements (such as response time, accuracy, scalability, and integration with existing systems or platforms)?</li>
+<li>What is the expected scale of the system in terms of data and user interactions?</li>
+<li>Is their any data available? What format?</li>
+<li>Personalized? not required</li>
+<li>How many languages needs to be supported?</li>
+<li>What types of items (products) are available on the platform, and what attributes are associated with them?</li>
+<li>What are the common user search behaviors and patterns? Do users frequently use filters, sort options, or advanced search features?</li>
+<li>Are there specific search-related challenges unique to the use case (e-commerce)? such as handling product availability, pricing, and customer reviews?</li>
+</ul>
+</li>
+<li>
+<p>Use case(s) and business goal</p>
+<ul>
+<li>Use case: user enters text query into search box, system shows the most relevant items (products)</li>
+<li>business goal: increase CTR, conversion rate, etc</li>
+</ul>
+</li>
+<li>
+<p>Requirements</p>
+<ul>
+<li>response time, accuracy, scalability (50M DAU)</li>
+</ul>
+</li>
+<li>
+<p>Constraints</p>
+<ul>
+<li>budget limitations, hardware limitations, or legal and privacy constraints</li>
+</ul>
+</li>
+<li>
+<p>Data: sources and availability</p>
+<ul>
+<li>Sources:</li>
+<li></li>
+</ul>
+</li>
+<li>
+<p>Assumptions</p>
+</li>
+<li>
+<p>ML formulation:</p>
+<ul>
+<li>ML Objective: retrieve items that are most relevant to a text query
+<ul>
+<li>we can define relevance as weighted summary of click, successful session, conversion, etc.</li>
+</ul>
+</li>
+<li>ML I/O: I: text query from a user, O: ranked list of most relevant items on an e-commerce platform</li>
+<li>ML category: MM input search system -&gt; retrieval and ranking
+<ul>
+<li>ranking: MM input -&gt; multi-label classification (click, success, convert, etc)</li>
+<li>we can use a multi-task classifier</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-metrics-6">2. Metrics </h3>
+<ul>
+<li>Offline
+<ul>
+<li>Precision@k, Recall@k, MRR, mAP, NDCG</li>
+<li>we choose NDCG (non-binary relevance)</li>
+</ul>
+</li>
+<li>Online
+<ul>
+<li>CTR: problem: doesn't track relevancy, click baits</li>
+<li>success session rate: dwell time &gt; T or add to cart</li>
+<li>total dwell time</li>
+<li>conversion rate</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-architectural-components-6">3. Architectural Components </h3>
+<ul>
+<li>Multimodal search (text, photo, video) for product content from text query:</li>
+<li>Multi-layer architecture
+<ul>
+<li>Query Understanding -&gt; Candidate generation -&gt; stage 1 Ranker -&gt; stage 2 Ranker -&gt; Blender -&gt; Filter</li>
+</ul>
+</li>
+<li>Query understanding
+<ul>
+<li>spell checker</li>
+<li>query normalization</li>
+<li>query expansion (e.g. add alternative) / relaxation (e.g. remove "good")</li>
+<li>Intent/Domain classification</li>
+</ul>
+</li>
+<li>Candidate generation
+<ul>
+<li>focus on recall, millions/billions into 10Ks</li>
+</ul>
+</li>
+<li>Ranking
+<ul>
+<li>ML based</li>
+<li>multi-stage ranker: if more than 10k items to select from or QPS &gt; 10k</li>
+<li>100k items: stage 1 (liner model) -&gt; stage 2 (DNN model) -&gt; 500 items</li>
+</ul>
+</li>
+<li>Blender:
+<ul>
+<li>outputs a SERP (search engine result page)</li>
+<li>blends results from multiple sources e.g. textual (inverted index, semantic) search, visual search, etc.</li>
+</ul>
+</li>
+</ul>
+<h4 id="retrieval">Retrieval </h4>
+<ul>
+<li>from 100 B to 100k</li>
+<li>IR: compares query text with document text</li>
+<li>Document types:
+<ul>
+<li>item (product) title</li>
+<li>item description</li>
+<li>item reviews</li>
+<li>item category</li>
+</ul>
+</li>
+<li>inverted index:
+<ul>
+<li>index DS, mapping from words into their locations in a set of documents (e.g. ABC -&gt; documents 1, 7)</li>
+</ul>
+</li>
+<li>after query expansion (e.g. black pants into black and pants or suit-pants or trousers etc), do a search in inverted index db and find relevant items with relevance score</li>
+<li>relevance score
+<ul>
+<li>weighted linear combination of:
+<ul>
+<li>terms match (e.g. TF-IDF score)(e.g. w = 0.5),</li>
+<li>item popularity (e.g. no of reviews, or bought) (e.g. w=0.125),</li>
+<li>intent match score (e.g. 0.125/2),</li>
+<li>domain match score,</li>
+<li>personalization score (e.g. age, gender, location, interests)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="ranking">Ranking: </h4>
+<ul>
+<li>see the next sections.</li>
+</ul>
+<h3 id="4-data-collection-and-preparation-6">4. Data Collection and Preparation </h3>
+<ul>
+<li>Data sources:
+<ul>
+<li>Users</li>
+<li>Queries</li>
+<li>Items (products)</li>
+<li>Context</li>
+</ul>
+</li>
+<li>Labeling:
+<ul>
+<li>use online user engagement data to generate positive and negative labels</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-feature-engineering-8">5. Feature Engineering </h3>
+<ul>
+<li>Feature selection
+<ul>
+<li>User:
+<ul>
+<li>ID, username,</li>
+<li>Demographics (age, gender, location)</li>
+<li>User interaction history (click rate, purchase rate, etc)</li>
+<li>User interests (e.g. categories)</li>
+</ul>
+</li>
+<li>Context:
+<ul>
+<li>device,</li>
+<li>time of the day,</li>
+<li>recent hype results</li>
+<li>previous queries</li>
+</ul>
+</li>
+<li>Query features:
+<ul>
+<li>query historical engagement (by other users)</li>
+<li>query intent / domain</li>
+<li>query embeddings</li>
+</ul>
+</li>
+<li>Item (product) features
+<ul>
+<li>Title (exact text + embeddings)</li>
+<li>Description (exact text + embeddings)</li>
+<li>Reviews data (avg reviews, no of reviews, review textual data (text + embeddings))</li>
+<li>category</li>
+<li>page rank</li>
+<li>engagement radius</li>
+</ul>
+</li>
+<li>User-Item(product) features
+<ul>
+<li>distance (e.g. for shipment)</li>
+<li>historical engagement by the user (e.g. document type)</li>
+</ul>
+</li>
+<li>Query-Item(product) features
+<ul>
+<li>text match (title, description, category)</li>
+<li>unigram or bigram search (title, description, category) - TF-IDF score</li>
+<li>historical engagement (e.g. click rate of Item for that query)</li>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-model-development-and-offline-evaluation-8">6. Model Development and Offline Evaluation </h3>
+<h4 id="ranking-1">Ranking </h4>
+<ul>
+<li>
+<p>Model Selection</p>
+<ul>
+<li>Two options:
+<ul>
+<li>Pointwise LTR model: &lt;user, item&gt; -&gt; relevance score
+<ul>
+<li>approximate it as a binary classification problem p(relevant)</li>
+</ul>
+</li>
+<li>Pairwise LTR model: &lt;user, item1, item2&gt; -&gt; item1 score &gt; item2 score ?
+<ul>
+<li>loss function if the predicted order is correct</li>
+<li>more natural to ranking, more complicated</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Multi - Stage ranking
+<ul>
+<li>100k items (focus on recall) -&gt; 500 items (focus on precision) -&gt; 500 items in correct order</li>
+<li>Stage 1: We use a pointwise LTR -&gt; binary classifier
+<ul>
+<li>latency: microseconds</li>
+<li>suggestion: LR or small MART (multiple additive regression trees)</li>
+<li>use ROC AUC for metric</li>
+</ul>
+</li>
+<li>Stage 2: Pairwise LTR model
+<ul>
+<li>Two options (choose based on train data availability and capacity):
+<ul>
+<li>LambdaMART: a variation of MART, obj fcn changed to improve pairwise ranking</li>
+<li>LambdaRank: NN based model, pairwise loss (minimize inversions in ranking)</li>
+</ul>
+</li>
+<li>use NDCG for metric</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Training Dataset</p>
+<ul>
+<li>Pointwise approach
+<ul>
+<li>positive samples: user engaged (e.g. click, spent time &gt; T, add to cart, purchased)</li>
+<li>negative samples: no engagement by the user + random negative samples e.g. from pages 10 and beyond</li>
+<li>5 million Q/day -&gt; one positive one negative sample from each query -&gt; 10 million samples a day</li>
+<li>use a whole week's data at least to capture daily patterns
+<ul>
+<li>capturing and dealing with seasonal and holiday data</li>
+</ul>
+</li>
+<li>train-valid/test split: 70/30 (of 70 million)</li>
+<li>temporal affect: e.g. use 3 weeks data: first 2/3 of weeks: train, last week valid / test</li>
+</ul>
+</li>
+<li>Pairwise approach:
+<ul>
+<li>ranks items according to their relative order, which is closer to the nature of ranking</li>
+<li>predict doc scores in a way that miimizes No of inversions in the final ranked result</li>
+<li>Two options for train data generation for pointwise approach
+<ul>
+<li>human raters: each human rates 10 results per 100K queries * 10 humans = 10M examples
+<ul>
+<li>expensive, doesn't scale</li>
+</ul>
+</li>
+<li>online engagement data
+<ul>
+<li>assign scores to each engagement type e.g.
+<ul>
+<li>impression with no click -&gt; label/score 0</li>
+<li>click only -&gt; score 1</li>
+<li>spent time after click &gt; T : score 2</li>
+<li>add to cart : score 3</li>
+<li>purchase: score 4</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- - Text encoders:  -->
+  <!-- - Text -> Vector (Embeddings)  
+  - Two approaches: 
+    - Statistical (BoW, TF-IDF)
+    - ML encoders (word2vec, transformer based e.g. BERT)  
+  - We chose transformer based (BERT). 
+<ul>
+<li>Video encoders:
+<ul>
+<li>Video-level
+<ul>
+<li>more expensive, but captures temporal understanding</li>
+<li>Example: ViViT (Video Vision Transformer)</li>
+</ul>
+</li>
+<li>Frame-level (from sample frames and aggregate)
+<ul>
+<li>less expensive (training and serving speed, compute power)</li>
+<li>Example: ViT<br>
+--&gt;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="7-prediction-service-8">7. Prediction Service </h3>
+<ul>
+<li>Re-ranking
+<ul>
+<li>business level logic and policies  --&gt;
+<ul>
+<li>filtering inappropriate items</li>
+<li>diversity (exploration/exploitation)</li>
+<li>etc</li>
+</ul>
+</li>
+<li>Two ways:
+<ul>
+<li>rule based filters and aggregators</li>
+<li>ML model
+<ul>
+<li>Binary Classification (P(inappropriate))</li>
+<li>Data sources: human raters, user feedback (report, review)</li>
+<li>Features: same as product features in ranker</li>
+<li>Models: LR, MART, or DNN (depending on data size, capacity, experiments)</li>
+<li>More details on harmful content classification</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-online-testing-and-deployment-8">8. Online Testing and Deployment </h3>
+<h3 id="9-scaling-monitoring-and-updates-6">9. Scaling, Monitoring, and Updates </h3>
+<h3 id="10-other-talking-points">10. Other talking points </h3>
+<ul>
+<li>Positional bias</li>
+</ul>
+<h1 id="design-a-video-recommendation-system">Design a video recommendation system </h1>
+<h2 id="1-problem-formulation-9">1. Problem Formulation </h2>
+<p>User-video interaction</p>
+<p>Some existing data examples:</p>
+<ul>
+<li>videos data</li>
+<li>User historic data</li>
+<li>Recommendations data</li>
+<li>Reviews</li>
+</ul>
+<h3 id="clarifying-questions-1">Clarifying questions </h3>
+<ul>
+<li>Use case? Homepage?
+<ul>
+<li>Does user sends a text query as well?</li>
+</ul>
+</li>
+<li>Business objective?
+<ul>
+<li>Increase user engagement (play, like, click, share), purchase?, create a better ultimate gaming experience</li>
+</ul>
+</li>
+<li>Similar to previously played, or personalized for the user? Personalized for the user</li>
+<li>User locations? Worldwide (multiple languages)</li>
+<li>User’s age group:</li>
+<li>Do users have any favorite lists, play later, etc?</li>
+<li>How many videos? 100 million</li>
+<li>How many users? 100 million DAU</li>
+<li>Latency requirements  - 200msec?</li>
+<li>Data access
+<ul>
+<li>Do we log and have access to any data? Can we build a dataset using user interactions ?</li>
+<li>Do we have textual description of items?</li>
+</ul>
+</li>
+<li>can users become friends on the platform and do we wanna take that into account?</li>
+<li>Free or Paid?</li>
+</ul>
+<h3 id="ml-objective-1">ML objective </h3>
+<ul>
+<li>Recommend most engaging (define) videos
+<ul>
+<li>Max. No. of clicks (clickbait)</li>
+<li>Max. No. completed videos/sessions/levels (bias to shorter)</li>
+<li>Max. total hours played ()</li>
+<li>Max. No. of relevant items (proxy by user implicit/explicit reactions) -&gt; more control over signals, not the above shortcomings</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Define relevance: e.g. like is relevant, or playing half of it is, …</li>
+<li>ML Objective: build dataset and model to predict the relevance score b/w user and a video</li>
+<li>I/O: I: user_id, O: ranked list of videos + relevance score</li>
+<li>ML category: Recommendation System</li>
+</ul>
+<h2 id="2-metrics-offline-and-online-2">2. Metrics (Offline and Online) </h2>
+<ul>
+<li>Offline:
+<ul>
+<li>precision @k, mAP, and diversity</li>
+</ul>
+</li>
+<li>Online:
+<ul>
+<li>CTR, # of completed, # of purchased, total play time, total purchase, user feedback</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-architectural-components-mvp-logic-2">3. Architectural Components (MVP Logic) </h2>
+<p>The main approaches used for personalized recommendation systems:</p>
+<ul>
+<li>Content-based filtering: suggest items similar to those user found relevant (e.g. liked)
+<ul>
+<li>No need for interaction data, recommends new items to users (no item cold start)</li>
+<li>Capture unique interests of users</li>
+<li>New user cold start</li>
+<li>Needs domain knowledge</li>
+</ul>
+</li>
+<li>CF: Using user-user (user based CF) or item-item similarities (item based CF)
+<ul>
+<li>Pros
+<ul>
+<li>No domain knowledge</li>
+<li>Capture new areas of interest</li>
+<li>Faster than content (no content info needed)</li>
+</ul>
+</li>
+<li>Cons:
+<ul>
+<li>Cold start problem (both user and item)</li>
+<li>No niche interest</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Hybrid
+<ul>
+<li>Parallel hybrid: combine(CF results, content based)</li>
+<li>Sequential: [CF based] -&gt; Content based</li>
+</ul>
+</li>
+</ul>
+<p>What do we choose?<br>
+We choose a sequential hybrid model (standard e.g. for video recommendation)</p>
+<p>We follow  the three stage recommender system (funnel architecture) in order to meet latency requirements and eb able to scale the system to billions of items.</p>
+<pre data-role="codeBlock" data-info="mermaid" data-parsed-info="{&quot;language&quot;:&quot;mermaid&quot;,&quot;attributes&quot;:{&quot;class&quot;:&quot;mermaid&quot;}}" data-normalized-info="{&quot;language&quot;:&quot;mermaid&quot;,&quot;attributes&quot;:{&quot;class&quot;:&quot;mermaid&quot;}}" >   Candidate generation --&gt; Ranking --&gt; Re-ranking
+</pre><p>In the first stage, we use a light model to retrive thousands of items from millions<br>
+In the second (ranking) stage, we focus on high precision using a powerful model. This will not impact serving speed much because it's only run on smaller subset of items.</p>
+<p>Candidate generation in practice comes from aggregation of different candidate generation models. Here we can assume three candidate generation modules:</p>
+<ol>
+<li>Candidate generation 1 (Relevance based)</li>
+<li>Candidate generation 2 (Popularity)</li>
+<li>Candidate generation 3 (Trending)</li>
+</ol>
+<p>where we use CF for candidate generation 1</p>
+<p>We use content based modeling for ranking.</p>
+<h2 id="4-data-preparation-2">4. Data preparation </h2>
+<p>Data Sources:</p>
+<ol>
+<li>
+<p>Users (user profile, historical interactions):</p>
+<ul>
+<li>User profile
+<ul>
+<li>User_id, username, age, gender, location (city, country), lang, timezone</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>videos (structures, metadata, video content - what is it?)</p>
+<ul>
+<li>video_id, title, date, rating, expected_length?,  #reviews, language, tags, description, price, developer, publisher, level, #levels</li>
+</ul>
+</li>
+<li>
+<p>User-video interactions:<br>
+Historical interactions: Play, purchase, like, and search history, etc</p>
+<ul>
+<li>User_id, video_id, timestamp, interaction_type(purchase, play, like, impression, search), interaction_val, location</li>
+</ul>
+</li>
+<li>
+<p>Context: time of the day, day of the week, device, OS</p>
+</li>
+</ol>
+<p>Type</p>
+<ul>
+<li>Removing duplicates</li>
+<li>filling missing values</li>
+<li>normalizing data.</li>
+</ul>
+<h3 id="labeling-1">Labeling: </h3>
+<p>For features in the form of &lt;user, video&gt; pairs -&gt; labeling strategy based on explicit or implicit feedback<br>
+e.g. &quot;positive&quot; if user liked the item explicitly or interacted (e.g. watched/played) at least for X (e.g. half of it).<br>
+negative samples: sample from background distribution -&gt; correct via importance smapling</p>
+<h2 id="5-feature-engineering-9">5. Feature engineering </h2>
+<p>There are several machine learning features that can be extracted from videos. Here are some examples:</p>
+<ul>
+<li>video metadata features</li>
+<li>video state: e.g. the positions of players, the status of objects and obstacles, the time remaining, and the score.</li>
+<li>video mechanics: The rules and interactions that govern the video.</li>
+<li>User engagement: e.g. the length of play sessions, frequency of play, and player retention rates.</li>
+<li>Social interactions: b/w players: to identify patterns of behavior, such as the formation of alliances, the sharing of resources, and the types of communication used between players.</li>
+<li>Player preferences: which video features are most popular among players, which can help inform video design decisions.</li>
+<li>Player behaviors: player movement patterns, the types of actions taken by players, and the strategies used to achieve objectives.</li>
+</ul>
+<p>We select some important features as follows:</p>
+<ul>
+<li>
+<p>video metadata features:</p>
+<ul>
+<li>video ID,<br>
+Duration,<br>
+Language,<br>
+Title,<br>
+Description,<br>
+Genre/Category,<br>
+Tags,<br>
+Publisher(popularity, reviews),<br>
+Release date,<br>
+Ratings,<br>
+Reviews,<br>
+(video content ?)<br>
+video titles, genres, platforms, release dates, user ratings, and user reviews.</li>
+</ul>
+</li>
+<li>
+<p>User profile:</p>
+<ul>
+<li>User ID, Age, Gender, Language, City, Country</li>
+</ul>
+</li>
+<li>
+<p>User-item historical features:</p>
+<ul>
+<li>User-item interactions
+<ul>
+<li>Played, liked, impressions</li>
+<li>purchase history (avg. price)</li>
+</ul>
+</li>
+<li>User search history</li>
+</ul>
+</li>
+<li>
+<p>Context</p>
+</li>
+</ul>
+<h3 id="feature-representation-1">Feature representation: </h3>
+<ul>
+<li>Categorical data (video_id, user_id, language, city): Use embedding layers, learned during<br>
+training</li>
+<li>Categorical_data(gender, age): one_hot</li>
+<li>Continuous variables: normalize, or bucketize and one-hot (e.g. price)</li>
+<li>Text:(title, desc, tags): title/description use embeddings, pre-trained BERT, fine tune on video language?, tags: CBOW</li>
+<li></li>
+<li>video content embeddings?</li>
+</ul>
+<h2 id="6-model-development-and-offline-evaluation-9">6. Model Development and Offline Evaluation </h2>
+<h3 id="61-candidate-generation-1">6.1 Candidate Generation </h3>
+<p>For candidate generation 1 (Relevance Based), we choose CF.</p>
+<p>For CF there are two embedding based modeling options:</p>
+<ol>
+<li>Matrix Factorization
+<ul>
+<li>Pros: Training speed (only two matrices to learn), Serving speed (static learned embeddings)</li>
+<li>Cons: only relies on user-item interactions (No user profile info e.g. language is used); new-user cold start problem</li>
+</ul>
+</li>
+<li>Two tower neural network:
+<ul>
+<li>Pros: Accepts user features (user profile + user search history) -&gt; better quality recommendation; handles new users</li>
+<li>Cons: Expensive training, serving speed</li>
+</ul>
+</li>
+</ol>
+<p>We chose two-tower network here.</p>
+<h4 id="two-tower-network-1">Two-tower network </h4>
+<ul>
+<li>two encoder towers (user tower + encoder tower)</li>
+<li>user tower encodes user features into user embeddings  <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">u</span></span></span></span></li>
+<li>item tower encodes item features into item embeddings   <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">v_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
+<li>similarity <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">u</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">v_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> is considered as a relevance score (ranking as classification problem)</li>
+</ul>
+<h4 id="loss-function-1">Loss function: </h4>
+<p>Minimize cross entropy for each positive label and sampled negative examples</p>
+<h3 id="62-ranking-1">6.2 Ranking </h3>
+<p>For Ranking stage, we prioritize precision over efficiency. We choose content based filtering. Choose a model that relies in item features.<br>
+ML Obj options:</p>
+<ul>
+<li>max P(watch| U, C)</li>
+<li>max expected total watch time</li>
+<li>multi-objective (multi-task learning: add corresponding losses)</li>
+</ul>
+<p>Model Options:</p>
+<ul>
+<li>FF NN (e.g. similar tower network to a tower network) + logistic regression</li>
+<li>Deep Cross Network (DCN)</li>
+</ul>
+<p>Features</p>
+<ul>
+<li>Video ID embeddings (watched video embedding avg, impression video embedding),</li>
+<li>Video historic
+<ul>
+<li>No. of previous impressions, reviews, likes, etc</li>
+<li>Time features (e.g. time since last play),</li>
+</ul>
+</li>
+<li>Language embedding (user, item),</li>
+<li>User profile</li>
+<li>User Historic (e.g. search history)</li>
+</ul>
+<h3 id="63-re-ranking-1">6.3 Re-Ranking </h3>
+<p>Re-ranks items by additional business criteria (filter, promote)<br>
+We can use ML models for clickbait, harmful content, etc or use heuristics<br>
+Examples:</p>
+<ul>
+<li>Age restriction filter</li>
+<li>Region restriction filter</li>
+<li>Video freshness (promote fresh content)</li>
+<li>Deduplication</li>
+<li>Fairness, bias, etc</li>
+</ul>
+<h2 id="7-prediction-service-9">7. Prediction Service </h2>
+<p>two-tower network inference: find the k-top most relevant items given a user -&gt;<br>
+It's a classic nearest neighbor problem -&gt; use approximate nearest neighbor (ANN) algorithms</p>
+<h2 id="8-online-testing-and-deployment-9">8. Online Testing and Deployment </h2>
+<p>Standard approaches as before.</p>
+<h2 id="9-scaling-2">9. Scaling </h2>
+<p>The three stage candidate generation - ranking - re-ranking can be scaled well as described earlier. It also meets the requirements of speed (funnel architecture), precision(ranking component), and diversity (multiple candid generation).</p>
+<h3 id="cold-start-problem-1">Cold start problem: </h3>
+<ul>
+<li>new users: two tower architectures accepts new users and we can still use user profile info even with no interaction</li>
+<li>new items: recommend to random users and collect some data - then fine tune the model using new data</li>
+</ul>
+<h3 id="training-1">Training: </h3>
+<p>We need to be able to fine tune the model</p>
+<h3 id="exploration-exploitation-trade-off-1">Exploration exploitation trade-off </h3>
+<ul>
+<li>Multi-armed bandit (an agent repeatedly selects an option and receives a reward/cost. The goal of to maximize its cumulative reward over time, while simultaneously learning which options are most valuable.)</li>
+</ul>
+<h3 id="other-extensions-1">Other Extensions: </h3>
+<ul>
+<li><a href="https://daiwk.github.io/assets/youtube-multitask.pdf">Multi-task learning</a>
+<ul>
+<li>Includes a shared feature extractor that is trained jointly with multiple prediction heads, each of which is responsible for predicting a different aspect of user behavior, such as click-through rate, watch time, and view count. The model is trained using a combination of supervised and unsupervised learning techniques, including cross-entropy loss, pairwise ranking loss, and self-supervised contrastive learning.</li>
+</ul>
+</li>
+<li>Positional bias (detection and correction)</li>
+<li>Selection bias (detection and correction)</li>
+<li>Add negative feedback (dislike)</li>
+<li>Locality preservation:
+<ul>
+<li>Use sequential user behavior info (CBOW model)</li>
+</ul>
+</li>
+<li>effect of seasonality</li>
+<li>what if we only have a query and personal (item, provider) history?
+<ul>
+<li>item embeddings, provider embeddings, query embeddings</li>
+<li>we can build a query-aware attention mechanism that computes</li>
+</ul>
+</li>
+</ul>
+<h3 id="more-resources-1">More resources </h3>
+<ul>
+<li><a href="https://www.kaggle.com/code/fetenbasak/content-based-recommendation-video-recommender">Content-based</a>, <a href="https://www.kaggle.com/code/greentearus/steam-reviews-nlp-analysis">NLP analysis</a>, <a href="https://www.kaggle.com/code/krsnewwave/collaborative-denoising-autoencoder-steam">Collaborative Denoising AE</a></li>
+<li><a href="https://github.com/manandesai/video-recommendation-engine">User-based CF, item-based CF and MF</a> (<a href="https://github.com/manandesai/video-recommendation-engine/blob/main/recommenders.ipynb">github</a>)</li>
+<li><a href="https://github.com/AudreyGermain/video-Recommendation-System">CF and content based</a></li>
+</ul>
+--></li></ul>
+      </div>
+      
+      
+    
+    
+    <script type="module">
+// TODO: If ZenUML gets integrated into mermaid in the future,
+//      we can remove the following lines.
+
+
+var MERMAID_CONFIG = ({"startOnLoad":false});
+if (typeof MERMAID_CONFIG !== 'undefined') {
+  MERMAID_CONFIG.startOnLoad = false
+  MERMAID_CONFIG.cloneCssStyles = false
+  MERMAID_CONFIG.theme = "default"
+}
+
+mermaid.initialize(MERMAID_CONFIG || {})
+if (typeof(window['Reveal']) !== 'undefined') {
+  function mermaidRevealHelper(event) {
+    var currentSlide = event.currentSlide
+    var diagrams = currentSlide.querySelectorAll('.mermaid')
+    for (var i = 0; i < diagrams.length; i++) {
+      var diagram = diagrams[i]
+      if (!diagram.hasAttribute('data-processed')) {
+        mermaid.init(null, diagram, ()=> {
+          Reveal.slide(event.indexh, event.indexv)
+        })
+      }
+    }
+  }
+  Reveal.addEventListener('slidetransitionend', mermaidRevealHelper)
+  Reveal.addEventListener('ready', mermaidRevealHelper)
+  await mermaid.run({
+    nodes: document.querySelectorAll('.mermaid')
+  })
+} else {
+  await mermaid.run({
+    nodes: document.querySelectorAll('.mermaid')
+  })
+}
+</script>
+    
+    
+    
+  
+    </body></html>

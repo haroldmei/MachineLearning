@@ -34,3 +34,5 @@ Adversarial logit pairing, Kannan et el.
 
 // Efficient Global Optimization of Expensive Black-Box Functions
 Snoek, Larochelle, Adams, 2012
+
+
